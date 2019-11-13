@@ -1,0 +1,150 @@
+*{
+	padding:0px;
+	margin:0px;
+	font-family:"나눔고딕";
+}
+input:focus { 
+  outline: none; 
+} 
+ul{
+	list-style-type:none;
+}
+#login_menu{
+	width:100%;
+	background-color:#f8f8f8;
+}
+#login_menu #login_menu_1 ul li{
+	display:inline;
+}
+#login_menu #login_menu_1 ul{
+	background-color:#f8f8f8;
+	width:1058px;
+	margin:0 auto;
+	text-align:right;
+	color:#5D5D5D;
+	font-size:12px;
+}
+#login_menu #login_menu_1{
+	padding:10px 0;
+	border-bottom:1px solid #e3e3e3;
+	background-color:#f8f8f8;
+}
+#login_menu #login_menu_1 ul li a{
+	padding:0 15px;
+	color:#5D5D5D;
+	font-size:12px;
+	text-decoration:none;
+}
+#login_menu #login_menu_1 ul li a:hover{
+	text-decoration:underline;
+	color:black;
+}
+#top_basket{
+	margin-bottom:-2px;
+}
+#top_logo_back{
+	width:1058px;
+	margin:0 auto;
+}
+#top_logo{
+	width:100px;
+}
+#top_logo1{
+	margin:20px 0;
+	text-align:center;
+}
+#center_menu{
+	background-color:#ca171d;
+	text-align:center;
+}
+#center_menu #center_menu_1{
+	background-color:#ca171d;
+	padding:12px 0;
+	color:white;
+	font-size:16px;
+	text-decoration:none;
+	width:1120px;
+	margin:0 auto;
+}
+#center_menu #center_menu_1 ul li{
+	display:inline;
+	margin:0 25px;
+}
+#center_menu #center_menu_1 ul li a{
+	color:white;
+	text-decoration:none;
+	font-size:16px;
+}
+#center_menu #center_menu_1 ul li a:hover{
+	text-decoration:underline;
+}
+#center_menu_1 #contents{
+	float:left;
+}
+#contents_img{
+	float:left;
+	margin:0px 5px 0 0;
+	height:20px;
+}
+#text_pound{
+	float:right;
+	width:170px;
+	height:21px;
+}
+#text_pound_img{
+	float:right;
+	height:24px;
+}
+#main_main{
+	width:1058px;
+	margin:0 auto;
+}
+/*푸터*/
+#footer {
+	width:100%;
+	height:100px;
+	clear:both;
+	float:left;
+	margin-top:30px;
+	border-top:solid 3px #ca171d;
+	display:block;
+}
+#footer_section {
+    padding-bottom: 260px;
+}
+#footer_width, #footer_section {
+    width: 1080px;
+    margin: 0px auto;
+}
+#copy_left {
+    width: 270px;
+    float: left;
+    border-right: 1px solid #dedede;
+    margin: 45px 30px 0px 0px;
+}
+.copy_left_info{
+	margin-top:10px;
+	font-size: 12px;
+    color: #777;
+}
+.copy_left_info, #copy_right {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgb(149, 149, 149);
+}
+.copy_right_info {
+    margin-top: 10px;
+}
+#copy_right {
+    padding-top: 20px;
+    width: 700px;
+    float: left;
+}
+#footer_width ul li{
+	display:inline;
+	line-height: 51px;
+	padding:0 5px;
+    font-size: 13px;
+    color: #555;
+}

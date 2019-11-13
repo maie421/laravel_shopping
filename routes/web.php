@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view('home');
+});
+
+Route::get('/login',function(){
+    return view('login');
+});
+
+Route::get('/meat',function(){
+    return view('meat');
+});
+Route::get('/join',function(){
+    return view('join');
+});
+Route::get('/product',function(){
+    return view('product');
 });
