@@ -116,11 +116,24 @@ ul {
     <div id="login_menu">
             <div id="login_menu_1">
                 <ul>
+                @guest
                     <li><a href="login">로그인</a></li>
                     <li>|</li>
-                    <li><a href="join">회원가입</a></li>
+                    <li><a href="register">회원가입</a></li>
                     <li>|</li>
                     <li><a href="#">고객센터</a></li>
+                @else
+                    <li>{{ Auth::user()->name }}님</li>
+                    
+                    <li><a href="logout"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        로그아웃
+                    </a></li>
+                    <form id="logout-form" action="logout" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                @endguest
                 </ul>
             </div>
             <div id="top_logo_back">

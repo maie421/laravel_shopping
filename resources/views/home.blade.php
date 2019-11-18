@@ -55,7 +55,6 @@
 	border:solid 1px #ececec;
 	background-color:white;
 	float:left;
-	padding:5px;
 	margin-bottom:40px;
 	width:300px;
 	height:430px;
