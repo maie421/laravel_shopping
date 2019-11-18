@@ -121,10 +121,10 @@ ul {
                     <li>|</li>
                     <li><a href="register">회원가입</a></li>
                     <li>|</li>
-                    <li><a href="#">고객센터</a></li>
+                    <li><a href="/notices">고객센터</a></li>
                 @else
                     <li>{{ Auth::user()->name }}님</li>
-                    
+                    <li><a href="notices">고객센터</a></li>
                     <li><a href="logout"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

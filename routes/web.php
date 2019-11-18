@@ -17,13 +17,21 @@ Route::get('/', function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 // Route::get('/login',function(){
 //     return view('login');
 // });
 
-// Route::get('/meat',function(){
-//     return view('meat');
-// });
+Route::get('/meat',function(){
+    return view('meat');
+});
+
+Route::get('/notices',function(){
+    return view('/notices/index');
+});
+
+
+// Route::get('/notices', 'NoticesController@index');
 // Route::get('/join',function(){
 //     return view('join');
 // });
