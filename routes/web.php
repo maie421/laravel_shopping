@@ -29,6 +29,9 @@ Route::get('/meat',function(){
 Route::get('/notices',function(){
     return view('/notices/index');
 });
+Route::get('/show',function(){
+    return view('/notices/show');
+});
 
 
 // Route::get('/notices', 'NoticesController@index');
