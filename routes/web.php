@@ -29,9 +29,10 @@ Route::get('/meat',function(){
     return view('meat');
 });
 
-Route::get('/notices',function(){
-    return view('/notices/index');
-});
+// Route::get('/notices',function(){
+//     return view('/notices/index');
+// });
+Route::get('/notices', 'NoticeController@index');
 Route::get('/writing',function(){
     return view('/notices/writing');
 });

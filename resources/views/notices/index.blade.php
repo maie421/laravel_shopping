@@ -33,35 +33,26 @@
                 <th style="width:470px">제목</th>
                 <th>작성자</th>
                 <th>날짜</th>
-                <th>조회수</th>
             </tr>
             </thead>
             <tbody>
+                @foreach ($notices as $notice)
                 <tr>
-                    <td>165</td>
-                    <td>끝</td>
-                    <td>윤영미</td>
-                    <td>2017.04.21</td>
-                    <td>2</td>
+                    <td>{{$notice->id}}</td>
+                    <td>{{$notice->subject}}</td>
+                    <td>{{$notice->name}}</td>
+                    <td>{{$notice->created_at}}</td>
                 </tr>
-                <tr>
-                    <td>165</td>
-                    <td>끝</td>
-                    <td>윤영미</td>
-                    <td>201</td>
-                    <td>2</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
         <hr/>
         <a href="writing" class="btn btn-default pull-right">글쓰기</a>
         <div class="text-center">
-            <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-            </ul>
+        {{ $notices->links() }}
         </div>
+        <!-- {{print_r($notices)}} -->
+        
     </div>
     </div>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
