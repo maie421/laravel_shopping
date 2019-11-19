@@ -2,13 +2,13 @@
 
 @section('content')
 
-  <style>
+<style>
 .content_main{
     float: left;
     margin-left:30px;
     width:800px;
-  }
-    </style>
+}
+</style>
     <div class="container" >
     <div class="side_menu" style="width:200px; float:left;">
         <!-- 사이드 바 메뉴-->
@@ -39,7 +39,7 @@
                 @foreach ($notices as $notice)
                 <tr>
                     <td>{{$notice->id}}</td>
-                    <td>{{$notice->subject}}</td>
+                    <td><a href="/notices/show/{{$notice->id}}">{{$notice->subject}}</a></td>
                     <td>{{$notice->name}}</td>
                     <td>{{$notice->created_at}}</td>
                 </tr>
@@ -47,7 +47,7 @@
             </tbody>
         </table>
         <hr/>
-        <a href="writing" class="btn btn-default pull-right">글쓰기</a>
+        <a href="/notices/writing" class="btn btn-default pull-right">글쓰기</a>
         <div class="text-center">
         {{ $notices->links() }}
         </div>

@@ -33,9 +33,12 @@ Route::get('/meat',function(){
 //     return view('/notices/index');
 // });
 Route::get('/notices', 'NoticeController@index');
-Route::get('/writing',function(){
+Route::get('/notices/writing',function(){
     return view('/notices/writing');
 });
+Route::get('/notices/show/{id}','NoticeController@getNoticeById');
+Route::get('/notices/edit/{id}','NoticeController@getNoticeEdit');
+Route::put('/notices/update/{id}','NoticeController@updateNoticeById');
 
 Route::post('/noticesinsert',function(Request $request){
     $validator = Validator::make($request->all(), [
@@ -61,15 +64,7 @@ Route::post('/noticesinsert',function(Request $request){
     if (isset($request['name'])) {
         $notice->name = $request['name'];
     }
-    error_log($request['name']);
     $notice->save();
 
     return redirect('/notices');
 });
-// Route::get('/notices', 'NoticesController@index');
-// Route::get('/join',function(){
-//     return view('join');
-// });
-// Route::get('/product',function(){
-//     return view('product');
-// });
