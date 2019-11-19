@@ -4,10 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Notice extends Model
+class notice extends Model
 {
     //
-    protected $fillable = [
-        'title', 'story', 'name',
-    ];
+    protected $fillable = ['subject', 'content', 'email'];
 }

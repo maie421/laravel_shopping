@@ -54,7 +54,7 @@
             </tbody>
         </table>
         <hr/>
-        <a href="show" class="btn btn-default pull-right">글쓰기</a>
+        <a href="writing" class="btn btn-default pull-right">글쓰기</a>
         <div class="text-center">
             <ul class="pagination">
                 <li><a href="#">1</a></li>
