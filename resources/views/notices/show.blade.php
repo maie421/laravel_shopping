@@ -22,7 +22,7 @@
 
     <div >
 
-        <a href="/notices/edit/{{$notices->id}}"><button type="buttom" class="btn btn-sm btn-primary" id="btnList">수정</button></a>
+        <a href="/edit/{{$notices->id}}"><button type="buttom" class="btn btn-sm btn-primary" id="btnList">수정</button></a>
         <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
 
     </div>

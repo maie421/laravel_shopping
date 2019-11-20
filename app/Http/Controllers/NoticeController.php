@@ -15,7 +15,7 @@ class NoticeController extends Controller
        return view('/notices/index',['notices'=>$notice]);
     }
     public function NoticeEdit($id,Request $request){
-       return view('/notices/edit/'.$id);
+       return view('/notices/edit'.$id);
     }
     public function getNoticeById($id){
        $notices=new Notice();

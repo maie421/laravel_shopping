@@ -17,7 +17,15 @@ use App\Notice;
 Route::get('/', function() {
     return view('home');
 });
+
 Auth::routes();
+
+Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
+Route::post('/auth/login', 'Auth\LoginController@login');
+Route::get('/auth/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('/auth/register', 'Auth\RegisterController@register');
+
+Route::post('/auth/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -25,20 +33,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     return view('login');
 // });
 
-Route::get('/meat',function(){
-    return view('meat');
+Route::get('/goods/meat',function(){
+    return view('/goods/meat');
+});
+Route::get('/goods/product',function(){
+    return view('/goods/product');
 });
 
 // Route::get('/notices',function(){
 //     return view('/notices/index');
 // });
-Route::get('/notices', 'NoticeController@index');
-Route::get('/notices/writing',function(){
+Route::get('/notices/index', 'NoticeController@index');
+Route::get('/writing',function(){
     return view('/notices/writing');
 });
-Route::get('/notices/show/{id}','NoticeController@getNoticeById');
-Route::get('/notices/edit/{id}','NoticeController@getNoticeEdit');
-Route::put('/notices/update/{id}','NoticeController@updateNoticeById');
+Route::get('/show/{id}','NoticeController@getNoticeById');
+Route::get('/edit/{id}','NoticeController@getNoticeEdit');
+Route::put('/update/{id}','NoticeController@updateNoticeById');
 
 Route::post('/noticesinsert',function(Request $request){
     $validator = Validator::make($request->all(), [
@@ -66,5 +77,5 @@ Route::post('/noticesinsert',function(Request $request){
     }
     $notice->save();
 
-    return redirect('/notices');
+    return redirect('/notices/index');
 });
