@@ -50,6 +50,7 @@ Route::get('/writing',function(){
 Route::get('/show/{id}','NoticeController@getNoticeById');
 Route::get('/edit/{id}','NoticeController@getNoticeEdit');
 Route::put('/update/{id}','NoticeController@updateNoticeById');
+Route::delete('/delete/{id}','NoticeController@deleteNoticeById');
 
 Route::post('/noticesinsert',function(Request $request){
     $validator = Validator::make($request->all(), [

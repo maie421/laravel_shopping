@@ -67,10 +67,9 @@
     <div class="in_side"><span class="admin">{{$notices->name}}</span>{{$notices->created_at}}</div> 
     <!-- <span class="num"><b>조회수</b>1</span>-->
     <div class="content">{{$notices->content}}</div>
-
         <hr/>
-        <a href="/notices/edit/{{$notices->id}}"><button type="submit" class="btn btn-sm btn-primary" id="btnList">수정</button></a>
-        <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+        <a href="/edit/{{$notices->id}}"><button type="submit" class="btn btn-sm btn-primary" id="btnList">수정</button></a>
+        <a href="/notices/index"><button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button></a>
         </div><!--notice_main-->  
     </div>
     </div>

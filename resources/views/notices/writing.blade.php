@@ -8,7 +8,7 @@
     width:850px;
 }
 </style>
-<div class="container" style="margin-top:30px;">
+<div class="container">
 <div class="side_menu" style="width:200px; float:left;">
         <!-- 사이드 바 메뉴-->
         <!-- 패널 타이틀1 -->
@@ -61,7 +61,7 @@
 
     <button type="submit" class="btn btn-sm btn-primary" id="btnList">확인</button>
     </form>
-        <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+    <a href="/notices/index"><button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button></a>
     </div>
     </div>
 </div>

@@ -29,6 +29,14 @@ class NoticeController extends Controller
 
         return view('/notices/edit',['notices'=>$result]);
     }
+    public function deleteNoticeById($id)
+    {
+        // find task
+    	$notices = Notice::find($id);
+    	// delete
+        $notices->delete();
+        return redirect('/notices/index');
+    }
     public function updateNoticeById($id,Request $request){
         // $validator = Validator::make($request->all(), [
         //     'title' => 'required|max:100',

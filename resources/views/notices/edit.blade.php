@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="content_main">
-    <form method="post" action="/notices/update/{{$notices->id}}">
+    <form method="post" action="/update/{{$notices->id}}">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <div class="mb-3">
@@ -52,12 +52,16 @@
 
         </div> -->
     <div>
-    <button type="submit" class="btn btn-sm btn-primary" id="btnList">확인</button>
-        <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
-
-    </div>
+        <button type="submit" class="btn btn-sm btn-primary" style="float:left;"id="btnList">수정</button>
+    </form>
+    <form action="/delete/{{$notices->id}}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('delete') }}
+        <button type="submit" class="btn btn-sm btn-primary"style="float:left; margin:0 5px;" id="btnList">삭제</button>
+        <a href="/notices/index"><button type="button"style="float:left;" class="btn btn-sm btn-primary" id="btnList">목록</button></a>     
     </div>
     </form>
+</div>
 </div>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

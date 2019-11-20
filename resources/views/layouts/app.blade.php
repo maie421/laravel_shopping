@@ -23,7 +23,7 @@
     font-family: "나눔고딕";
 }
 .container {
-    width: 1000px;
+    width: 1120px;
     max-width: none !important;
 }
 
