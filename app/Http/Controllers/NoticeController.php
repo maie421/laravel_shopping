@@ -10,7 +10,7 @@ class NoticeController extends Controller
     public function index(){
        $notice=DB::table('notices')
        ->orderBy('created_at', 'desc')
-       ->paginate(2);
+       ->paginate(10);
     // $notice = Notice::where('name', '=', '윤영미')->paginate(15);
        return view('/notices/index',['notices'=>$notice]);
     }

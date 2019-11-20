@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="content_main">
-        <h2>공지사항</h2>
+        <h3>공지사항</h3>
         <table class="table table-striped">
             <thead>
             <tr>
