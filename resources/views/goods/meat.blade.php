@@ -158,7 +158,9 @@
     5000
     </div>
 </div>
-
+<div style="clear:both;padding-top:20px;">
+<a href="/goods/Add"><button type="button" class="btn btn-sm btn-primary" id="btnList" style="float:right;">추가</button></a>
+</div>
 <div class="number_page_center">
   <ul>
     <li id="number_page"><a href="#">1</a></li>
