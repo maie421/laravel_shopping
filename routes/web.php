@@ -42,7 +42,7 @@ Route::get('/goods/product',function(){
 Route::get('/goods/Add',function(){
     return view('/goods/Add');
 });
-Route::post('/goods/Information', 'goodsController@goods');
+Route::post('/goods/Information', 'goodsController@sore');
 
 Route::get('/goods/meat', 'goodsController@index');
 // Route::resource('images', 'goodsController', ['only' => ['goods', 'destroy']]);

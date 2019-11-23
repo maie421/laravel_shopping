@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\goods;
+use DB;
+
 class goodsController extends Controller
 {
     public function index()
@@ -18,9 +20,12 @@ class goodsController extends Controller
         //             'src' => $url . $file
         //         ];
         //     }
-        return view('/goods/meat');
+    $goods=DB::table('goods')
+        ->orderBy('created_at', 'desc')
+        ->paginate(9);
+        return view('/goods/meat',['goods'=>$goods]);
     }
-    public function goods(Request $request)
+    public function sore(Request $request)
     {
         $this->validate($request, [
             'image' => 'required|image|max:2048'
@@ -31,15 +36,21 @@ class goodsController extends Controller
             $filePath = 'images/' . $name;
             Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
         }
-        $imges=new goods();
-        $imges->name=$request['name'];
-        $imges->content="sdf";
-        $imges->price=$request['price'];
-        $imges->path="https://shoppi.s3.ap-northeast-2.amazonaws.com/images".$filePath;
-        // $imges->path="asdf";
-        $imges->save();
+        DB::table('goods')->insert([
+            'name' =>$request['name'],
+            'content' => $request['content'],
+            'price'=>$request['price'],
+            'path'=>'https://s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/' . env('AWS_BUCKET') . '/'.$filePath
+        ]);
+        // $imges->name=$request['name'];
+        // $imges->content=$request['content'];
+        // $imges->price=$request['price'];
+        // $imges->path='https://s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/' . env('AWS_BUCKET') . '/'.$filePath;
+        // // $imges->path="asdf";
+        // $imges->save();
 
-        return view('/goods/meat');
+        // return view('/goods/meat');
+        return back();
     }
     public function destroy($image)
     {

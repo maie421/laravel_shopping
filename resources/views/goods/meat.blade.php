@@ -147,24 +147,24 @@
     <li><a href="#">등록일순</li>
   </ul>
 </div>
-
-<div id="list_box">
-<a href="product"><img src="http://study421.dothome.co.kr/html/management/1000000959_detail_054.jpg" id="img_size"></a>
-    <div id="menu_name">
-    고기
-    </div>
-    소고기 입니다
-    <div id="color">
-    5000
-    </div>
-</div>
+@foreach($goods as $stuff)
+	<div id="list_box">
+	<a href="product"><img src="{{$stuff->path}}" id="img_size"></a>
+		<div id="menu_name">
+		{{$stuff->name}}
+		</div>
+		{{$stuff->content}}
+		<div id="color">
+		{{$stuff->price}}
+		</div>
+	</div>
+@endforeach
 <div style="clear:both;padding-top:20px;">
 <a href="/goods/Add"><button type="button" class="btn btn-sm btn-primary" id="btnList" style="float:right;">추가</button></a>
 </div>
-<div class="number_page_center">
-  <ul>
-    <li id="number_page"><a href="#">1</a></li>
-  </ul>
 </div>
 </div>
+	<div class="text-center" style="margin:0 auto;clear:both;padding-top:30px;width:100px;">
+		{{ $goods->links() }}
+	</div>
 @endsection
