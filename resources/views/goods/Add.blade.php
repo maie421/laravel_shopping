@@ -25,22 +25,22 @@
     <div class="content_main">
     <h3>고기 추가</h3>
 
-    <form method="post" action="/noticesinsert">
+    <form method="post" action="{{ url('/goods/Information') }}" enctype="multipart/form-data" >
         {{ csrf_field() }}
         <div class="mb-3">
-            <input type="file">
+            <input type="file" name="image">
         </div>
         <div class="mb-3">
 
             <label for="title">제목</label>
 
-            <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
+            <input type="text" class="form-control" name="name" id="title" placeholder="제목을 입력해 주세요">
 
         </div>
 
         <div class="mb-3">
             <label for="title">금액</label>
-            <input type="text" class="form-control" placeholder="금액"> 
+            <input type="text" class="form-control" name="price" placeholder="금액"> 
         </div>
         <div class="mb-3">
 

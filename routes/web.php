@@ -33,18 +33,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     return view('login');
 // });
 
-Route::get('/goods/meat',function(){
-    return view('/goods/meat');
-});
+// Route::get('/goods/meat',function(){
+//     return view('/goods/meat');
+// });
 Route::get('/goods/product',function(){
     return view('/goods/product');
 });
 Route::get('/goods/Add',function(){
     return view('/goods/Add');
 });
-// Route::get('/notices',function(){
-//     return view('/notices/index');
-// });
+Route::post('/goods/Information', 'goodsController@goods');
+
+Route::get('/goods/meat', 'goodsController@index');
+// Route::resource('images', 'goodsController', ['only' => ['goods', 'destroy']]);
+
+Route::get('/notices',function(){
+    return view('/notices/index');
+});
 Route::get('/notices/index', 'NoticeController@index');
 Route::get('/writing',function(){
     return view('/notices/writing');
