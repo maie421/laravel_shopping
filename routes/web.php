@@ -36,9 +36,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/goods/meat',function(){
 //     return view('/goods/meat');
 // });
-Route::get('/goods/product',function(){
-    return view('/goods/product');
-});
+Route::get('/goods/product/{id}','goodsController@product');
 Route::get('/goods/Add',function(){
     return view('/goods/Add');
 });

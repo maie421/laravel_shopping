@@ -69,6 +69,7 @@ ul {
 
 #top_logo_back {
     width: 1058px;
+    text-align:center;
     margin: 20px auto;
 }
 

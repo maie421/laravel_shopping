@@ -149,7 +149,7 @@
 </div>
 @foreach($goods as $stuff)
 	<div id="list_box">
-	<a href="product"><img src="{{$stuff->path}}" id="img_size"></a>
+	<a href="/goods/product/{{$stuff->id}}"><img src="{{$stuff->path}}" id="img_size"></a>
 		<div id="menu_name">
 		{{$stuff->name}}
 		</div>

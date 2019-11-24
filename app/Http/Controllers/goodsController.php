@@ -21,7 +21,7 @@ class goodsController extends Controller
         //         ];
         //     }
     $goods=DB::table('goods')
-        ->orderBy('created_at', 'desc')
+        ->orderBy('id', 'desc')
         ->paginate(9);
         return view('/goods/meat',['goods'=>$goods]);
     }
@@ -56,5 +56,10 @@ class goodsController extends Controller
     {
         Storage::disk('s3')->delete('images/' . $image);
         return back()->withSuccess('Image was deleted successfully');
+    }
+    public function product($id){
+        $product=goods::find($id);
+        // $product=DB::table('goods')->where('id',$id);
+        return view('/goods/product',['product'=>$product]);
     }
 }

@@ -123,20 +123,20 @@ hr{
 }
 </style>
 <div class="container" style="margin-top:-40px; width:1000px;" >
-<img src="http://study421.dothome.co.kr/html/management/1000000959_detail_054.jpg" id="img_size">
+<img src="{{$product->path}}" id="img_size">
   <div id="maine_side" >
-    <div id="menu_name">가지</div>
-    가지가 좋아요
+    <div id="menu_name">{{$product->name}}</div>
+    {{$product->content}}
     <hr>
     <ul id="purchase">
-      <li><b>소비자가</b> <del> &nbsp;5000</del></li>
+      <li><b>소비자가</b> <del> &nbsp;{{$product->price}}</del></li>
       <li><b>판매가 &nbsp;	<span id="red">5000</span></b>원</li>
       <li><b>구매제한</b> &nbsp;최소 1개</li>
       <li><b>배송비</b> &nbsp;	조건부무료(50,000원 미만 구입시 3,000원)</li>
       <li><b>가능배송</b> &nbsp;우체국 택배 / 모닝 배송</li>
     </ul>
     <div id="result">
-      가지
+	{{$product->name}}
       <span id="number_box">
         <input type="text" id="number" value="1" name="quantity">
         <div id="number_button_box">
