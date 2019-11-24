@@ -146,7 +146,7 @@ hr{
       </span>
     </div>
     <div id="full_result"></div>
-	<input type='button' id='shoppingbasket' value='장바구니에 담기' >
+	<a href="/goods/Addcart/{{$product->id}}"><input type='button' id='shoppingbasket' value='장바구니에 담기' ></a>
   </div>
 </div>
 

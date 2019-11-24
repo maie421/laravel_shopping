@@ -135,6 +135,7 @@ ul {
                         @csrf
                     </form>
                 @endguest
+                    <li><a href="/goods/cart">장바구니</a></li>
                 </ul>
             </div>
             <div id="top_logo_back">

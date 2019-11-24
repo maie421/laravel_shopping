@@ -24,26 +24,22 @@ Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
 Route::post('/auth/login', 'Auth\LoginController@login');
 Route::get('/auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/auth/register', 'Auth\RegisterController@register');
-
 Route::post('/auth/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/login',function(){
-//     return view('login');
-// });
-
-// Route::get('/goods/meat',function(){
-//     return view('/goods/meat');
-// });
 Route::get('/goods/product/{id}','goodsController@product');
 Route::get('/goods/Add',function(){
     return view('/goods/Add');
 });
 Route::post('/goods/Information', 'goodsController@sore');
-
 Route::get('/goods/meat', 'goodsController@index');
-// Route::resource('images', 'goodsController', ['only' => ['goods', 'destroy']]);
+Route::get('/goods/cart', function(){
+    return view('/goods/cart');
+});
+Route::get('/goods/Addcart/{id}', 'goodsController@addToCart');
+Route::delete('/goods/Deletecart/{id}', 'goodsController@Deletecart');
+Route::patch('/goods/updatecart/{id}', 'goodsController@updatecart');
 
 Route::get('/notices',function(){
     return view('/notices/index');

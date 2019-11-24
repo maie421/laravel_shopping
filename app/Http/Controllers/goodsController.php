@@ -62,4 +62,65 @@ class goodsController extends Controller
         // $product=DB::table('goods')->where('id',$id);
         return view('/goods/product',['product'=>$product]);
     }
+    public function addToCart($id)
+    {
+        $product = goods::find($id);
+        if(!$product) {
+            abort(404);
+        }
+        $cart = session()->get('cart');
+        // if cart is empty then this the first product
+        if(!$cart) {
+            $cart = [
+                    $id => [
+                        "name" => $product->name,
+                        "quantity" => 1,
+                        "price" => $product->price,
+                        "path" => $product->path
+                    ]
+            ];
+ 
+            session()->put('cart', $cart);
+            return redirect()->back();
+        }
+        // if cart not empty then check if this product exist then increment quantity
+        if(isset($cart[$id])) {
+ 
+            $cart[$id]['quantity']++;
+ 
+            session()->put('cart', $cart);
+ 
+            return redirect()->back();
+ 
+        }
+        // if item not exist in cart then add to cart with quantity = 1
+        $cart[$id] = [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "path" => $product->path
+        ];
+        session()->put('cart', $cart);
+ 
+        return redirect()->back();
+    }
+    public function Deletecart($id){
+        $cart = session()->get('cart');
+ 
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+        // session()->flash('success', 'Product removed successfully');
+        return redirect()->back();
+    }
+    public function updatecart($id,Request $request){
+        $cart=session()->get('cart');
+
+        if(isset($cart[$id])){
+            $cart[$id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+        }
+        return redirect()->back();
+    }
 }
