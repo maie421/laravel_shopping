@@ -53,6 +53,7 @@ td a:hover{
 	font-size:14px;
 	color:#717171;
 	padding:0px 5px;
+	text-align:center;
 }
 .notice_check{
 	width:100px;
@@ -155,7 +156,7 @@ td a:hover{
 	</div>
     <table>
     <tr>
-      <th class="notice">상품/옵션 정보</th> 
+      <th class="notice_title">상품/옵션 정보</th> 
       <th class="notice">수량</th>
       <th class="notice">상품금액</th>
       <th class="notice">합계금액</th>

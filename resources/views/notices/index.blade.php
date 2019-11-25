@@ -36,9 +36,10 @@
             </tr>
             </thead>
             <tbody>
+                <?php $i=$notices->total() ?>
                 @foreach ($notices as $notice)
                 <tr>
-                    <td>{{$notice->id}}</td>
+                    <td><?=$i--?></td>
                     <td><a href="/show/{{$notice->id}}">{{$notice->subject}}</a></td>
                     <td>{{$notice->name}}</td>
                     <td>{{$notice->created_at}}</td>

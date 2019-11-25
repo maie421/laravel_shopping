@@ -114,6 +114,7 @@ ul {
 <body>
   <!-- navigation bar -->
     <!--공통 부분-->
+    <?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=""?>
     <div id="login_menu">
             <div id="login_menu_1">
                 <ul>
@@ -126,12 +127,12 @@ ul {
                 @else
                     <li>{{ Auth::user()->name }}님</li>
                     <li><a href="/notices/index">고객센터</a></li>
-                    <li><a href="/auth/logout"
+                    <li><a 
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         로그아웃
                     </a></li>
-                    <form id="logout-form" action="logout" method="POST" style="display: none;">
+                    <form id="logout-form" action="/auth/logout" method="POST" style="display: none;">
                         @csrf
                     </form>
                 @endguest

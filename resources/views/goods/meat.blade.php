@@ -160,7 +160,9 @@
 	</div>
 @endforeach
 <div style="clear:both;padding-top:20px;">
+<?php if($UserEmail ?? ''==="maie421@naver.com"){ ?>
 <a href="/goods/Add"><button type="button" class="btn btn-sm btn-primary" id="btnList" style="float:right;">추가</button></a>
+<?php } ?>
 </div>
 </div>
 </div>

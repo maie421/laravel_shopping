@@ -24,7 +24,11 @@ Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
 Route::post('/auth/login', 'Auth\LoginController@login');
 Route::get('/auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/auth/register', 'Auth\RegisterController@register');
-Route::post('/auth/logout', 'Auth\LoginController@logout');
+Route::post('/auth/logout',function(){
+    Auth::logout();
+    return view('/home');
+});
+// Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
