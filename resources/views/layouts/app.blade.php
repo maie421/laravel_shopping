@@ -114,7 +114,6 @@ ul {
 <body>
   <!-- navigation bar -->
     <!--공통 부분-->
-    <?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=""?>
     <div id="login_menu">
             <div id="login_menu_1">
                 <ul>
@@ -132,7 +131,7 @@ ul {
                                         document.getElementById('logout-form').submit();">
                         로그아웃
                     </a></li>
-                    <form id="logout-form" action="/auth/logout" method="POST" style="display: none;">
+                    <form id="logout-form" action="/authLogout" method="POST" style="display: none;">
                         @csrf
                     </form>
                 @endguest

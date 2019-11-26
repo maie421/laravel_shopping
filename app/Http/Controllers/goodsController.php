@@ -20,9 +20,13 @@ class goodsController extends Controller
         //             'src' => $url . $file
         //         ];
         //     }
-    $goods=DB::table('goods')
-        ->orderBy('id', 'desc')
-        ->paginate(9);
+    if (request()->sort == 'low_high') {
+        $goods=DB::table('goods')->orderBy('price')->paginate(9);
+    }else if(request()->sort == 'high_low'){
+        $goods=DB::table('goods')->orderBy('price','desc')->paginate(9);
+    }else{
+        $goods=DB::table('goods')->orderBy('id', 'desc')->paginate(9);
+    }
         return view('/goods/meat',['goods'=>$goods]);
     }
     public function sore(Request $request)
@@ -81,7 +85,8 @@ class goodsController extends Controller
             ];
  
             session()->put('cart', $cart);
-            return redirect()->back();
+            // return redirect()->back();
+            return redirect('/goods/cart');
         }
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
@@ -90,7 +95,7 @@ class goodsController extends Controller
  
             session()->put('cart', $cart);
  
-            return redirect()->back();
+            return redirect('/goods/cart');
  
         }
         // if item not exist in cart then add to cart with quantity = 1
@@ -102,7 +107,7 @@ class goodsController extends Controller
         ];
         session()->put('cart', $cart);
  
-        return redirect()->back();
+        return redirect('/goods/cart');
     }
     public function Deletecart($id){
         $cart = session()->get('cart');
@@ -112,7 +117,7 @@ class goodsController extends Controller
             session()->put('cart', $cart);
         }
         // session()->flash('success', 'Product removed successfully');
-        return redirect()->back();
+        return redirect('/goods/cart');
     }
     public function updatecart($id,Request $request){
         $cart=session()->get('cart');
@@ -121,6 +126,6 @@ class goodsController extends Controller
             $cart[$id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
         }
-        return redirect()->back();
+        return redirect('/goods/cart');
     }
 }

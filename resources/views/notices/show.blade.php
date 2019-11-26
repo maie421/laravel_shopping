@@ -68,7 +68,8 @@
     <!-- <span class="num"><b>조회수</b>1</span>-->
     <div class="content">{{$notices->content}}</div>
         <hr/>
-        <?php if($UserEmail ?? ''===($notices->email)){ ?>
+        <?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=NULL?>
+        <?php if($UserEmail ===($notices->email)){ ?>
         <a href="/edit/{{$notices->id}}"><button type="submit" class="btn btn-sm btn-primary" id="btnList">수정</button></a>
         <?php } ?>
         <a href="/notices/index"><button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button></a>

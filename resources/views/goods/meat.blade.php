@@ -141,10 +141,9 @@
 <span id="full">상품 0개</span>
 <div id="line">
   <ul id="line_list">
-    <li><a href="#">판매인기순</a></li>
-    <li><a href="#">낮은가격순</a></li>
-    <li><a href="#">높은가격순</a></li>
-    <li><a href="#">등록일순</li>
+    <li><a href="/goods/meat?sort=low_high">낮은가격순</a></li>
+    <li><a href="/goods/meat?sort=high_low">높은가격순</a></li>
+    <li><a href="/goods/meat">등록일순</li>
   </ul>
 </div>
 @foreach($goods as $stuff)
@@ -160,13 +159,15 @@
 	</div>
 @endforeach
 <div style="clear:both;padding-top:20px;">
-<?php if($UserEmail ?? ''==="maie421@naver.com"){ ?>
+<?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=NULL?>
+<?php if($UserEmail==="maie421@naver.com"){ ?>
 <a href="/goods/Add"><button type="button" class="btn btn-sm btn-primary" id="btnList" style="float:right;">추가</button></a>
 <?php } ?>
 </div>
 </div>
 </div>
 	<div class="text-center" style="margin:0 auto;clear:both;padding-top:30px;width:100px;">
-		{{ $goods->links() }}
+		<!-- {{ $goods->links() }} -->
+		{{ $goods->appends(request()->input())->links() }}
 	</div>
 @endsection
