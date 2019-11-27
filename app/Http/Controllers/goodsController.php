@@ -54,6 +54,7 @@ class goodsController extends Controller
         // $imges->save();
 
         // return view('/goods/meat');
+        error_log($request);
         return back();
     }
     public function destroy($image)

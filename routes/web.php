@@ -48,9 +48,11 @@ Route::delete('/goods/Deletecart/{id}', 'goodsController@Deletecart');
 Route::patch('/goods/updatecart/{id}', 'goodsController@updatecart');
 
 //결제
-Route::get('/goods/checkout', function(){
-    return view('/goods/checkout');
-});
+// Route::get('/goods/checkout', function(){
+//     return view('/goods/checkout');
+// });
+Route::get('/goods/checkout', 'checkController@index')->name('checkout.index');
+Route::post('/goods/payment', 'checkController@payment');
 
 //게시판
 Route::get('/notices',function(){

@@ -196,10 +196,11 @@ border:1px solid #dbdbdb;padding:80px 0px;text-align:center;border-top:none;colo
 	@if(!session('cart'))
 	<div id='NoProduct'>상품이 없습니다.</div>
     @endif
-	<a href="/goods/checkout">
+	<a href="{{route('checkout.index')}}">
   <div id="basket_buy">
     <input type="submit" id="basket_full_buy" style="width:200px;" value="선택 상품 주문">
   </div>
 	</a>
 </div>
+
 @endsection
