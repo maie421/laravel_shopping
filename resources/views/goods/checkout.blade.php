@@ -268,17 +268,19 @@ td a:hover{
                                     type='text'>
                             </div>
                         </div>
-  
-                        <div class='form-row row'>
+
+                        <!-- <div class='form-row row'>
                             <div class='col-md-12 error form-group hide'>
                                 <div class='alert-danger alert'>Please correct the errors and try
                                     again.</div>
                             </div>
-                        </div>
+                        </div> -->
                         <form action="/goods/payment" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <!-- <input type='hidden' name="Authorization" value="KakaoAK sk_test_7qrss0xiTynn9s9Q9kbZqVit00GKIUHEN9"> -->
                         <input type="submit" value="확인">
+
+                        <a href="{{ route('payment') }}" class="btn btn-success">Pay $100 from Paypal</a>
                         </form>
                         <!-- <div class="row">
                             <div class="col-xs-12">

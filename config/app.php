@@ -136,6 +136,7 @@ return [
 
     'providers' => [
         Laravel\Socialite\SocialiteServiceProvider::class,//github login add
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,//paypal
         /*
          * Laravel Framework Service Providers...
          */

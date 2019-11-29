@@ -57,7 +57,17 @@ Route::patch('/goods/updatecart/{id}', 'goodsController@updatecart');
 //     return view('/goods/checkout');
 // });
 Route::get('/goods/checkout', 'checkController@index')->name('checkout.index');
-Route::post('/goods/payment', 'checkController@payment');
+// Route::post('/goods/payment', 'checkController@payment');
+
+//paypal 결제
+// // route for processing payment
+// Route::post('paypal', 'PayPalController@payWithpaypal');
+// // route for check status of the payment
+// Route::get('status', 'PayPalController@getPaymentStatus');
+
+Route::get('payment', 'PayPalController@payment')->name('payment');
+Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
 //게시판
 Route::get('/notices',function(){
