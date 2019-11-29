@@ -24,6 +24,11 @@ Route::post('/authLogout',function(){
     Auth::logout();
     return redirect('/home');
 });
+// 깃허브 로그인
+// Route::get('auth/github', 'Auth\SocialController@redirectToProvider');
+// Route::get('auth/github/callback', 'Auth\SocialController@handleProviderCallback');
+Route::get('/auth/redirect/{provider}', 'Auth\SocialController@redirect');
+Route::get('/callback/{provider}', 'Auth\SocialController@callback');
 
 // 메인 페이지
 Route::get('/', function() {

@@ -135,7 +135,7 @@ return [
     */
 
     'providers' => [
-
+        Laravel\Socialite\SocialiteServiceProvider::class,//github login add
         /*
          * Laravel Framework Service Providers...
          */
@@ -189,7 +189,7 @@ return [
     */
 
     'aliases' => [
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,//github login add
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
