@@ -7,10 +7,30 @@ use App\Notice;
 
 class NoticeController extends Controller
 {
-    public function index(){
-       $notice=DB::table('notices')
-       ->orderBy('created_at', 'desc')
-       ->paginate(10);
+    public function index(Request $request){
+        if($request['find']==='subject'){
+            $search_text=$request['search_text'];
+            $notice=DB::table('notices')
+                ->where('subject', 'LIKE', "%$search_text%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);  
+        }else if($request['find']==='name'){
+            $search_text=$request['search_text'];
+            $notice=DB::table('notices')
+                ->where('name', 'LIKE', "%$search_text%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);  
+        }else if($request['find']==='content'){
+            $search_text=$request['search_text'];
+            $notice=DB::table('notices')
+                ->where('content', 'LIKE', "%$search_text%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);  
+        }else{
+                $notice=DB::table('notices')
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(10);
+        }
     // $notice = Notice::where('name', '=', '윤영미')->paginate(15);
        return view('/notices/index',['notices'=>$notice]);
     }

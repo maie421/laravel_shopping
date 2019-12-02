@@ -138,7 +138,7 @@
 </div>
   <div class="menu_banner"><img src="#" id="menu_banner"></div>
 <div id="main_main">
-<span id="full">상품 0개</span>
+<span id="full">상품  {{$goods->total()}}개</span>
 <div id="line">
   <ul id="line_list">
     <li><a href="/goods/meat?sort=low_high">낮은가격순</a></li>
@@ -160,7 +160,7 @@
 @endforeach
 <div style="clear:both;padding-top:20px;">
 <?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=NULL?>
-<?php if($UserEmail==="maie421@naver.com"){ ?>
+<?php if($UserEmail==="admin@naver.com"){ ?>
 <a href="/goods/Add"><button type="button" class="btn btn-sm btn-primary" id="btnList" style="float:right;">추가</button></a>
 <?php } ?>
 </div>

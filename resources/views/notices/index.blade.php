@@ -8,6 +8,28 @@
     margin-left:30px;
     width:800px;
 }
+#search{
+	margin-top:37px;
+    margin-bottom:20px;
+	background-color:#f7f7f7;
+	border-top:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+	padding:5px 0;
+	text-align:center;
+}
+#search_select,#search_text{
+	padding:5px;
+	border:1px solid #d0d0d0;
+}
+#search_text{
+	width:280px;
+}
+#search_button,.write_button{
+	background-color:#979797;
+	color:white;
+	border:none;
+	padding:6px 10px;
+}
 </style>
     <div class="container" >
     <div class="side_menu" style="width:200px; float:left;">
@@ -47,8 +69,24 @@
                 @endforeach
             </tbody>
         </table>
-        <hr/>
+        <!-- 검색어 -->
+        <div id="search">
+        <form method="get" action="/notices/index" >
+      <select id="search_select" name="find">
+        <option value="">전체</option>
+        <option value="subject">제목</option>
+        <option value="content">내용</option>
+        <option value="d">작성자</option>
+      </select>
+      <input type="text" id="search_text" name="search_text">
+      <input type="submit" id="search_button" value="검색" >
+      </form>
+    </div>
+        <!-- 검색어 -->
+        <?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=NULL?>
+        <?php if($UserEmail){ ?>
         <a href="/writing" class="btn btn-default pull-right">글쓰기</a>
+        <?php } ?>
         <div class="text-center">
         {{ $notices->links() }}
         </div>
