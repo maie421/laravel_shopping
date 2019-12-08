@@ -162,7 +162,51 @@ hr{
 	color: #777;
     text-align: center;
 }
+.qna {
+    padding: 20px 13px 0 96px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #dbdbdb;
+	clear:both;
 
+}
+.review-board {
+    width: 100%;
+    margin: 18px 0 0;
+    border-top: 2px solid #dbdbdb;
+    table-layout: fixed;
+}
+td .wrap {
+    padding: 20px 20px 0 166px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #dbdbdb;
+}
+td .view {
+    color: #444;
+    line-height: 1.8;
+}
+td .comment-wrap .head {
+    overflow: hidden;
+    padding: 24px 0 0;
+}
+td .comment-wrap ul li {
+    border-top: 1px solid #dbdbdb;
+}
+td .comment-wrap .comment-write {
+    overflow: hidden;
+    padding: 18px 0;
+    border-top: 1px solid #dbdbdb;
+}
+
+td .qna .msg {
+    max-width: 700px;
+    line-height: 1.6;
+}
+td .qna .answer {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background: url(../img/icon/a.png) no-repeat left 17px;
+    border-top: 1px solid #dbdbdb;
+}
 </style>
 <div class="container" style="margin-top:-40px; width:1000px;" >
 <img src="{{$product->path}}" id="img_size">
@@ -199,68 +243,48 @@ hr{
 		</ul>
     </div>
 	<div class="btn">
-	<a href="javascript:openWriteLayer('goodsqa','1000000217')" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
+	<a href="#" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
 	</div>
 	<tbody>
-    <!-- <tr class="preview js-data-row" data-bdid="goodsreview" data-sno="18127" data-auth="y">
-        <td><span class="rating"><span style="width:100%;">별</span></span></td>
-        <td class="txt-la">
-            
-            <span>
-            <a href="javascript:showBoardDetail('goodsreview',18127,'y')" >감사합니다</a>-->
-            <!-- <a href="javascript:void(0)" class="js-btn-view">감사합니다</a>
-            <img src="/data/skin/front/0685everest/board/skin/default/img/icon/icon_board_attach_file.png" alt="파일첨부 있음">
-            </span>
-        </td>
-        <td class="txt-la">
-		<img src="/data/icon/group_icon/ico_s_member_upload1.png">
-		신광*
-		</td>
-        <td>2019.11.15</td>
-    </tr> 
-    <tr class="detail js-detail" data-bdid="goodsreview" data-sno="18127" data-auth="y">
-        <td colspan="4"></td>
-    </tr>
-    <tr class="preview js-data-row" data-bdid="goodsreview" data-sno="17887" data-auth="y">
-        <td><span class="rating"><span style="width:100%;">별</span></span></td>
-        <td class="txt-la">
-            
-            <span>
-            <a href="javascript:showBoardDetail('goodsreview',17887,'y')" >우선 배송 포장상태가 굿이예요 ㅎ</a>-->
-            <!-- <a href="javascript:void(0)" class="js-btn-view">우선 배송 포장상태가 굿이예요 ㅎ</a>
-            </span>
-        </td>
-        <td class="txt-la">
-		<img src="/data/icon/group_icon/ico_s_member_upload1.png">
-		김효*
-		</td>
-        <td>2019.10.31</td>
-    </tr>
-    <tr class="detail js-detail" data-bdid="goodsreview" data-sno="17887" data-auth="y">
-        <td colspan="4"></td>
-    </tr>
-    <tr class="preview js-data-row" data-bdid="goodsreview" data-sno="17524" data-auth="y">
-        <td><span class="rating"><span style="width:100%;">별</span></span></td>
-        <td class="txt-la">
-            
-            <span> -->
-            <!--<a href="javascript:showBoardDetail('goodsreview',17524,'y')" >캠핑갈때 좋아요</a>-->
-            <!-- <a href="javascript:void(0)" class="js-btn-view">캠핑갈때 좋아요</a>
-            </span>
-        </td>
-        <td class="txt-la">
-		<img src="/data/icon/group_icon/ico_s_member_upload2.png">
-		권석*
-		</td>
-        <td>2019.10.07</td>
-    </tr> -->
-<table class="table">
+	<!-- 상품후기 리스트 -->
+<table class="table" style="margin-top:-40px;">
 	<tr>
 		<td>1</td>
-		<td style="width:470px"><a href="#">배송상태 좋아요</a></td>
+		<td style="width:470px"><a href="javascript:doDisplay(3);">배송상태 좋아요</a></td>
 		<td>홍길*</td>
 		<td>2019.10.07</td>
 	</tr>
+	<tr class="detail js-detail" >
+        <td colspan="4" style="display: table-cell;">
+		<div class="wrap" id="3"style="margin-bottom:25px; display:none" >
+			<div class="view" >
+				캠핑
+			</div>
+			<div class="comment-wrap" style="padding-bottom:20px">
+				<div class="head">
+					<div class="comment-count">
+						<p><strong>0</strong> 개의 댓글이 있습니다</p>
+					</div>
+				</div>
+				<ul>
+					<li>
+						<div class="comment-item not-record">등록된 댓글이 없습니다.</div>
+					</li>
+
+				</ul>
+				<div class="comment-write js-form-write">
+					<div class="ctt">
+					<textarea class="form-control" rows="5" name="content" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
+					</div>
+					<div style="text-align:right"><a href="#"><em>확인</em></a></div>
+					<div class="clear-both"></div>
+				</div>
+			</div>
+		</div>
+	</td>
+    </tr>
+</table>
+<table class="table"  style="margin-top:-40px;">
 	<tr>
 		<td>1</td>
 		<td style="width:470px"><a href="#">배송상태 좋아요</a></td>
@@ -268,6 +292,8 @@ hr{
 		<td>2019.10.07</td>
 	</tr>
 </table>
+<!-- 끝 상품후기 리스트 -->
+<!-- 시작 상품문의 리스트 -->
 <div class="title_detail">
 	<ul>
 	<li><a href="#none" onclick="movesub('page01')">상품상세정보</a></li>
@@ -277,22 +303,51 @@ hr{
 	</ul>
 </div>
 <div class="btn">
-	<a href="javascript:openWriteLayer('goodsqa','1000000217')" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
+	<a href="#" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
 </div>
-<table class="table">
+<table class="table" style="margin-top:-40px;">
 	<tr>
 		<td>1</td>
-		<td style="width:470px"><a href="#">배송상태 좋아요</a></td>
+		<td style="width:470px" ><a href="javascript:doDisplay(2);">배송상태 좋아요</a></td>
 		<td>홍길*</td>
 		<td>2019.10.07</td>
+		<td>답변미완료</td>
+		<td>답변하기</td>
 	</tr>
-	<tr>
-		<td>1</td>
-		<td style="width:470px"><a href="#">배송상태 좋아요</a></td>
-		<td>홍길*</td>
-		<td>2019.10.07</td>
-	</tr>
+	<td colspan="5" style="display: table-cell; border-top:none;">
+	
+	<div class="qna" id="2" style="	display:none;">
+		<div class="question">
+			<div class="msg">
+				<strong>유통기한</strong>
+				<p>대략 유통기한이 어느정도 되나요?&nbsp;</p>
+			</div>
+			<div class="btn">
+			</div>
+		</div>
+		<div class="answer">
+			<div class="msg">
+				<strong>안녕하세요 푸드장입니다.</strong>
+				<p style="">저희 푸드장을 이용해주셔서 감사합니다.♥</p>
+			</div>
+			<div class="btn">
+			</div>
+		</div>
+	</div>
+	</td>
 </table>
+<!-- 상품문의 리스트 -->
+<script type="text/javascript">
+	var bDisplay = true;
+	function doDisplay(i){
+		var con = document.getElementById(i);
+		if(con.style.display=='none'){
+			con.style.display = 'block';
+		}else{
+			con.style.display = 'none';
+		}
+	}
+</script>
 </div>
 
 @endsection
