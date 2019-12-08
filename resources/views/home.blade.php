@@ -179,7 +179,7 @@ del{
 }
 /*main_main_gray_img*/
 #main_main_gray_img{
-	height:230px;
+	height:265px;
 	background-color:#f5f5f5;
 	clear:both;
 	padding:20px 0 20px 0;

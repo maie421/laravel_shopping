@@ -44,7 +44,7 @@ class goodsController extends Controller
             'name' =>$request['name'],
             'content' => $request['content'],
             'price'=>$request['price'],
-            'path'=>'https://s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/' . env('AWS_BUCKET') . '/'.$filePath
+            'path'=>'https://shoppi.s3' . env('AWS_DEFAULT_REGION') . '.amazonaws.com' . env('AWS_BUCKET') . '/'.$filePath
         ]);
         // $imges->name=$request['name'];
         // $imges->content=$request['content'];
