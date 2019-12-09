@@ -43,7 +43,9 @@ Route::get('/goods/Add',function(){
 });
 Route::post('/goods/Information', 'goodsController@sore');
 Route::get('/goods/meat', 'goodsController@index');
-
+Route::get('/goods/ProjectWrite',function(){
+    return view('/goods/ProjectWrite');
+});
 //장바구니 부분
 Route::get('/goods/cart', function(){
     return view('/goods/cart');

@@ -243,7 +243,7 @@ td .qna .answer {
 		</ul>
     </div>
 	<div class="btn">
-	<a href="#" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
+	<a href="/goods/ProjectWrite" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
 	</div>
 	<tbody>
 	<!-- 상품후기 리스트 -->
@@ -303,7 +303,7 @@ td .qna .answer {
 	</ul>
 </div>
 <div class="btn">
-	<a href="#" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
+	<a href="/goods/ProjectWrite" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
 </div>
 <table class="table" style="margin-top:-40px;">
 	<tr>
@@ -332,6 +332,13 @@ td .qna .answer {
 			</div>
 			<div class="btn">
 			</div>
+		</div>
+		<div class="comment-write js-form-write" style="padding-top:-30px;">
+			<div class="ctt">
+			<textarea class="form-control" rows="5" name="content" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
+			</div>
+			<div style="text-align:right"><a href="#"><em>확인</em></a></div>
+			<div class="clear-both"></div>
 		</div>
 	</div>
 	</td>
