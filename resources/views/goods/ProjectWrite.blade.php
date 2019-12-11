@@ -25,42 +25,21 @@
     <div class="content_main">
     <h3>글쓰기</h3>
 
-    <form method="post" action="/noticesinsert">
+    <form method="post" action="{{ route('comment.add') }}">
         {{ csrf_field() }}
-
         <div class="mb-3">
-
             <label for="title">제목</label>
-
             <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
-
         </div>
+        <input type="hidden" name="post_id" value="{{ $id }}" />
         <div class="mb-3">
             <input type="file" name="image">
         </div>
         <div class="mb-3">
-
             <label for="content">내용</label>
-
-            <textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" ></textarea>
-
+            <textarea class="form-control" rows="5" name="comment_body" id="content" placeholder="내용을 입력해 주세요" ></textarea>
         </div>
-
-        <input type="hidden" name="email" value="{{Auth::user()->email}}">
-        <input type="hidden" name="name" value="{{Auth::user()->name}}">
-
-        <!-- <div class="mb-3">
-
-            <label for="tag">TAG</label>
-
-            <input type="text" class="form-control" name="tag" id="tag" placeholder="태그를 입력해 주세요">
-
-        </div> -->
-
-    
-
-    <div >
-
+    <div>
     <button type="submit" class="btn btn-sm btn-primary" id="btnList">확인</button>
     </form>
     <a href="/notices/index"><button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button></a>

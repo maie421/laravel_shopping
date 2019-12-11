@@ -43,9 +43,7 @@ Route::get('/goods/Add',function(){
 });
 Route::post('/goods/Information', 'goodsController@sore');
 Route::get('/goods/meat', 'goodsController@index');
-Route::get('/goods/ProjectWrite',function(){
-    return view('/goods/ProjectWrite');
-});
+
 //장바구니 부분
 Route::get('/goods/cart', function(){
     return view('/goods/cart');
@@ -53,6 +51,10 @@ Route::get('/goods/cart', function(){
 Route::get('/goods/Addcart/{id}', 'goodsController@addToCart');
 Route::delete('/goods/Deletecart/{id}', 'goodsController@Deletecart');
 Route::patch('/goods/updatecart/{id}', 'goodsController@updatecart');
+//상품 후기
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+Route::get('/goods/ProjectWrite/{id}','CommentController@index')->name('index.add');
 
 //결제
 // Route::get('/goods/checkout', function(){
@@ -111,3 +113,4 @@ Route::post('/noticesinsert',function(Request $request){
 
     return redirect('/notices/index');
 });
+//

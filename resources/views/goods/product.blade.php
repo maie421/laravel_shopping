@@ -243,22 +243,23 @@ td .qna .answer {
 		</ul>
     </div>
 	<div class="btn">
-	<a href="/goods/ProjectWrite" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
+	<a href="/goods/ProjectWrite/{{$product->id}}" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
 	</div>
 	<tbody>
 	<!-- 상품후기 리스트 -->
+@foreach($product->comments as $comment)
 <table class="table" style="margin-top:-40px;">
 	<tr>
-		<td>1</td>
-		<td style="width:470px"><a href="javascript:doDisplay(3);">배송상태 좋아요</a></td>
-		<td>홍길*</td>
-		<td>2019.10.07</td>
+		<td>{{$comment->id}}</td>
+		<td style="width:470px"><a href="javascript:doDisplay({{$comment->id}});">{{$comment->title}}</a></td>
+		<td>{{ $comment->user->name }}</td>
+		<td>{{ $comment->created_at}}</td>
 	</tr>
 	<tr class="detail js-detail" >
         <td colspan="4" style="display: table-cell;">
-		<div class="wrap" id="3"style="margin-bottom:25px; display:none" >
+		<div class="wrap" id="{{$comment->id}}"style="margin-bottom:25px; display:none" >
 			<div class="view" >
-				캠핑
+				{{ $comment->body}}
 			</div>
 			<div class="comment-wrap" style="padding-bottom:20px">
 				<div class="head">
@@ -284,14 +285,7 @@ td .qna .answer {
 	</td>
     </tr>
 </table>
-<table class="table"  style="margin-top:-40px;">
-	<tr>
-		<td>1</td>
-		<td style="width:470px"><a href="#">배송상태 좋아요</a></td>
-		<td>홍길*</td>
-		<td>2019.10.07</td>
-	</tr>
-</table>
+@endforeach
 <!-- 끝 상품후기 리스트 -->
 <!-- 시작 상품문의 리스트 -->
 <div class="title_detail">
@@ -303,12 +297,12 @@ td .qna .answer {
 	</ul>
 </div>
 <div class="btn">
-	<a href="/goods/ProjectWrite" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
+	<a href="/goods/ProjectWrite/{{$product->id}}" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
 </div>
 <table class="table" style="margin-top:-40px;">
 	<tr>
 		<td>1</td>
-		<td style="width:470px" ><a href="javascript:doDisplay(2);">배송상태 좋아요</a></td>
+		<td style="width:470px" ><a href="javascript:doDisplay(3);">배송상태 좋아요</a></td>
 		<td>홍길*</td>
 		<td>2019.10.07</td>
 		<td>답변미완료</td>
@@ -316,7 +310,7 @@ td .qna .answer {
 	</tr>
 	<td colspan="5" style="display: table-cell; border-top:none;">
 	
-	<div class="qna" id="2" style="	display:none;">
+	<div class="qna" id="3" style="	display:none;">
 		<div class="question">
 			<div class="msg">
 				<strong>유통기한</strong>
@@ -345,6 +339,7 @@ td .qna .answer {
 </table>
 <!-- 상품문의 리스트 -->
 <script type="text/javascript">
+	
 	var bDisplay = true;
 	function doDisplay(i){
 		var con = document.getElementById(i);
