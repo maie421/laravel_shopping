@@ -18,8 +18,8 @@ class CommentController extends Controller
         $comment->title= $request->get('title');
         $comment->user()->associate($request->user());
         $post = goods::find($request->get('post_id'));
-        $post->comments()->save($comment);
         $id=$request->get('post_id');
+        $post->comments()->save($comment);
         // return view('/goods/product/1');
         // return redirect('/goods/product/{id}');
         // return redirect()->route('/goods/product/1', ['id' => 1]);
@@ -30,6 +30,7 @@ class CommentController extends Controller
         $reply = new Comment();
         $reply->body = $request->get('comment_body');
         $reply->user()->associate($request->user());
+        error_log($request->get('comment_id'));
         $reply->parent_id = $request->get('comment_id');
         $post = goods::find($request->get('post_id'));
         $post->comments()->save($reply);

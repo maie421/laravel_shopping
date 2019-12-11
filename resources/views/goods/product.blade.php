@@ -247,19 +247,19 @@ td .qna .answer {
 	</div>
 	<tbody>
 	<!-- 상품후기 리스트 -->
-@foreach($product->comments as $comment)
+@foreach($product->comments as $review)
 <table class="table" style="margin-top:-40px;">
 	<tr>
-		<td>{{$comment->id}}</td>
-		<td style="width:470px"><a href="javascript:doDisplay({{$comment->id}});">{{$comment->title}}</a></td>
-		<td>{{ $comment->user->name }}</td>
-		<td>{{ $comment->created_at}}</td>
+		<td>{{$review->id}}</td>
+		<td style="width:470px"><a href="javascript:doDisplay({{$review->id}});">{{$review->title}}</a></td>
+		<td>{{ $review->user->name }}</td>
+		<td>{{ $review->created_at}}</td>
 	</tr>
 	<tr class="detail js-detail" >
         <td colspan="4" style="display: table-cell;">
-		<div class="wrap" id="{{$comment->id}}"style="margin-bottom:25px; display:none" >
+		<div class="wrap" id="{{$review->id}}"style="margin-bottom:25px; display:none" >
 			<div class="view" >
-				{{ $comment->body}}
+				{{ $review->body}}
 			</div>
 			<div class="comment-wrap" style="padding-bottom:20px">
 				<div class="head">
@@ -268,18 +268,25 @@ td .qna .answer {
 					</div>
 				</div>
 				<ul>
+				@foreach($review->replies as $comment)
 					<li>
-						<div class="comment-item not-record">등록된 댓글이 없습니다.</div>
+						<b>{{$comment->user->name}}</b>
+						<div class="comment-item not-record">{{$comment->body}}</div>
 					</li>
-
+				@endforeach
 				</ul>
-				<div class="comment-write js-form-write">
-					<div class="ctt">
-					<textarea class="form-control" rows="5" name="content" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
+				<form method="post" action="{{ route('reply.add') }}">
+            		@csrf
+					<div class="comment-write js-form-write">
+						<div class="ctt">
+						<input type="hidden" name="post_id" value="{{$product->id}}" />
+						<input type="hidden" name="comment_id" value="{{ $review->id }}" />
+						<textarea class="form-control" rows="5" name="comment_body" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
+						</div>
+							<input type="submit" class="btn btn-warning" value="확인" />
+						<div class="clear-both"></div>
 					</div>
-					<div style="text-align:right"><a href="#"><em>확인</em></a></div>
-					<div class="clear-both"></div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</td>

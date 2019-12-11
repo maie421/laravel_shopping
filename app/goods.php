@@ -18,6 +18,7 @@ class goods extends Model
     }
     public function comments()
     {
+        error_log("commnets 함수");
         return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
     }
 }
