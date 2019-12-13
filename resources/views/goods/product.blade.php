@@ -207,7 +207,23 @@ td .qna .answer {
     background: url(../img/icon/a.png) no-repeat left 17px;
     border-top: 1px solid #dbdbdb;
 }
+.bodyStory{
+	margin-top:40px;
+	font-weight:lighter;
+}
 </style>
+<script type="text/javascript">
+	
+	var bDisplay = true;
+	function doDisplay(i){
+		var con = document.getElementById(i);
+		if(con.style.display=='none'){
+			con.style.display = 'block';
+		}else{
+			con.style.display = 'none';
+		}
+	}
+</script>
 <div class="container" style="margin-top:-40px; width:1000px;" >
 <img src="{{$product->path}}" id="img_size">
   <div id="maine_side" >
@@ -258,10 +274,13 @@ td .qna .answer {
 	<tr class="detail js-detail" >
         <td colspan="4" style="display: table-cell;">
 		<div class="wrap" id="{{$review->id}}"style="margin-bottom:25px; display:none" >
-			<div class="view" >
-				{{ $review->body}}
+			<div class="view">
+				<img src="{{$review->img}}" style="width:250px;hieght:300ox;">
 			</div>
-			<div class="comment-wrap" style="padding-bottom:20px">
+			<div class="bodyStory">
+				{{ $review->body}}
+				</div>
+			<div class="comment-wrap" style="padding-bottom:20px;clear:both;">
 				<div class="head">
 					<div class="comment-count">
 						<p><strong>0</strong> 개의 댓글이 있습니다</p>
@@ -276,15 +295,15 @@ td .qna .answer {
 				@endforeach
 				</ul>
 				<form method="post" action="{{ route('reply.add') }}">
-            		@csrf
+						{{ csrf_field() }}
 					<div class="comment-write js-form-write">
 						<div class="ctt">
 						<input type="hidden" name="post_id" value="{{$product->id}}" />
 						<input type="hidden" name="comment_id" value="{{ $review->id }}" />
 						<textarea class="form-control" rows="5" name="comment_body" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
 						</div>
-							<input type="submit" class="btn btn-warning" value="확인" />
-						<div class="clear-both"></div>
+						<button type="submit" class="btn-sm btn-primary" style="float:right;margin-top:10px;">확인</button>
+						<!-- <div class="clear-both"></div> -->
 					</div>
 				</form>
 			</div>
@@ -345,18 +364,7 @@ td .qna .answer {
 	</td>
 </table>
 <!-- 상품문의 리스트 -->
-<script type="text/javascript">
-	
-	var bDisplay = true;
-	function doDisplay(i){
-		var con = document.getElementById(i);
-		if(con.style.display=='none'){
-			con.style.display = 'block';
-		}else{
-			con.style.display = 'none';
-		}
-	}
-</script>
+
 </div>
 
 @endsection

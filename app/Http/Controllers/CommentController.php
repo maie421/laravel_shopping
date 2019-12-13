@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Comment;
 use App\goods;
 
@@ -16,21 +17,27 @@ class CommentController extends Controller
         $comment = new Comment;
         $comment->body = $request->get('comment_body');
         $comment->title= $request->get('title');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = time() . $file->getClientOriginalName();
+            $filePath = 'images/' . $name;
+            Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
+            $comment->img='https://shoppi.s3' . env('AWS_DEFAULT_REGION') . '.amazonaws.com' . env('AWS_BUCKET') . '/'.$filePath;
+        }
         $comment->user()->associate($request->user());
         $post = goods::find($request->get('post_id'));
         $id=$request->get('post_id');
         $post->comments()->save($comment);
-        // return view('/goods/product/1');
-        // return redirect('/goods/product/{id}');
-        // return redirect()->route('/goods/product/1', ['id' => 1]);
         return redirect('/goods/product/'.$id);
     }
     public function replyStore(Request $request)
     {
+        $this->validate($request, [
+            'comment_body' => 'required'
+        ]);
         $reply = new Comment();
         $reply->body = $request->get('comment_body');
         $reply->user()->associate($request->user());
-        error_log($request->get('comment_id'));
         $reply->parent_id = $request->get('comment_id');
         $post = goods::find($request->get('post_id'));
         $post->comments()->save($reply);

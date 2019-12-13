@@ -25,7 +25,7 @@
     <div class="content_main">
     <h3>글쓰기</h3>
 
-    <form method="post" action="{{ route('comment.add') }}">
+    <form method="post" action="{{ route('comment.add') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="mb-3">
             <label for="title">제목</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="mb-3">
             <label for="content">내용</label>
-            <textarea class="form-control" rows="5" name="comment_body" id="content" placeholder="내용을 입력해 주세요" ></textarea>
+            <textarea class="form-control" rows="5" name="comment_body" id="content" placeholder="내용을 입력해 주세요" required ></textarea>
         </div>
     <div>
     <button type="submit" class="btn btn-sm btn-primary" id="btnList">확인</button>

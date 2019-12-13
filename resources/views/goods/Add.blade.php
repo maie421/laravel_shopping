@@ -24,7 +24,6 @@
     </div>
     <div class="content_main">
     <h3>고기 추가</h3>
-
     <form method="post" action="{{ url('/goods/Information') }}" enctype="multipart/form-data" >
         {{ csrf_field() }}
         <div class="mb-3">
