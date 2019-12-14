@@ -58,6 +58,8 @@ Route::get('/goods/ProjectWrite/{id}','CommentController@index')->name('index.ad
 
 //결제
 Route::get('/goods/checkout', 'checkController@index')->name('checkout.index');
+Route::get('/goods/checkout', 'checkController@index')->name('checkout.index');
+
 //PayPal
 Route::get('payment', 'PayPalController@payment')->name('payment');
 Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
@@ -65,6 +67,8 @@ Route::get('payment/success', 'PayPalController@success')->name('payment.success
 //주문
 Route::post('/goods/order','OrderController@order');
 Route::get('/order/orderConfirm','OrderController@index');//주문 페이지
+Route::get('/mypage/order','OrderController@MypageOrder');
+
 //게시판
 Route::get('/notices',function(){
     return view('/notices/index');

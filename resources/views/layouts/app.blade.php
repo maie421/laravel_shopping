@@ -173,7 +173,7 @@ ul {
                     <li>|</li>
                     <li><a href="/notices/index">고객센터</a></li>
                 @else
-                    <li>{{ Auth::user()->name }}님</li>
+                    <li><a href="/mypage/order">{{ Auth::user()->name }}님</a></li>
                     <li><a href="/notices/index">고객센터</a></li>
                     <li><a 
                         onclick="event.preventDefault();

@@ -9,7 +9,7 @@
 }
 </style>
 <div class="container" style="margin-top:40px;">
-<div class="side_menu" style="width:200px; float:left;">
+    <div class="side_menu" style="width:200px; float:left;">
         <!-- 사이드 바 메뉴-->
         <!-- 패널 타이틀1 -->
         <div class="panel panel-info" >
