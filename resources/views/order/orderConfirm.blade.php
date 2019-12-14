@@ -146,16 +146,32 @@ td a:hover{
 	color:#D34E3B;
 	float:right;
 }
-#NoProduct{
-border:1px solid #dbdbdb;padding:80px 0px;text-align:center;border-top:none;color:#828282;
+/* 주문정보 */
+#ord_title{
+	font-size:21px;
+	color: #111;
+    font-weight: bold;
+    float: left;
+}
+#ord_box_mini{
+	float: left;
+
+}
+#OrdBox {
+    width: 500px;
+    height: 100%;
+    padding:5px;
+    margin: 30px 20px;
+    float: left;
+    border: 1px solid #c9c9c9;
 }
 </style>
 <div class="container">
 <div id="join_top">
 		<div id="join_title">
-			장바구니
+			주문서
 		</div>
-		<span id="join_left"><span id="red_color1">01장바구니 > </span>02주문서작성/결제 > 03주문완료</span>
+		<span id="join_left">01장바구니 > 02주문서작성/결제 > <span id="red_color1">03주문완료</span>
 	</div>
     <table>
     <tr>
@@ -164,44 +180,28 @@ border:1px solid #dbdbdb;padding:80px 0px;text-align:center;border-top:none;colo
       <th class="notice">상품금액</th>
       <th class="notice">합계금액</th>
       <th class="notice">배송일정</th>
-      <th class="notice">삭제</th>
     </tr>
     @if(session('cart'))
     @foreach(session('cart') as $id => $details)
     <?php $total = 0 ?>
     <tr>
-        <td class="notice_title" ><a href="#"><img src="{{ $details['path'] }} " id="basket_img"></a>
+        <td class="notice_title" ><img src="{{ $details['path'] }} " id="basket_img">
         <div id="basket_img_name">{{ $details['name'] }}</div></td>
-        <form method="post" action="/goods/updatecart/{{$id}}"><!--총금액 새로고침-->
         <?php $total += $details['price'] * $details['quantity'] ?>
-        <td class="notice"><input type="text" id="basket_input" value="{{ $details['quantity'] }}" name="quantity"></td>
+        <td class="notice">{{ $details['quantity'] }}</td>
         <td class="notice">{{ $details['price'] }}</td>
         <td class="notice">{{$total}}</td>
-		<?php $timestamp = strtotime("+3 days"); ?>
+        <?php $timestamp = strtotime("+3 days"); ?>
         <td class="notice">{{date("Y-m-d", $timestamp)}}</td>
-        <td class="actions">
-            {{csrf_field()}}
-            {{method_field('patch')}}
-            <button class="btn btn-info btn-sm update-cart" style="float:left;margin:0 30px"><i class="fa fa-refresh"></i></button>
-            </form><!--초기화-->
-            <form method="post" action="/goods/Deletecart/{{$id}}">
-            {{ csrf_field() }}
-            {{ method_field('delete') }}
-            <button class="btn btn-danger btn-sm remove-from-cart" style="float:left;"><i class="fa fa-trash-o"></i></button>
-            </form>
-        </td>
     </tr>
 	@endforeach
 	@endif
-	</table>
-	@if(!session('cart'))
-	<div id='NoProduct'>상품이 없습니다.</div>
-    @endif
-	<a href="{{route('checkout.index')}}">
-  <div id="basket_buy">
-    <input type="submit" id="basket_full_buy" style="width:200px;" value="상품 주문">
-  </div>
-	</a>
+    </table>
+    <!-- 완료 -->
+	<div id="join_title" style="margin-top:30px;text-align:right;width:1000px;">
+		총액: 5000
+	</div>
+</div>
 </div>
 
 @endsection

@@ -240,11 +240,11 @@ td .qna .answer {
     <div id="result">
 	{{$product->name}}
       <span id="number_box">
-        <input type="text" id="number" value="1" name="quantity">
-        <div id="number_button_box">
+        <span  id="number">1</span>
+        <!-- <div id="number_button_box">
           <div id="number_button">∧</div>
           <div id="number_button">∨</div>
-        </div>
+        </div> -->
       </span>
     </div>
     <div id="full_result"></div>
@@ -259,7 +259,10 @@ td .qna .answer {
 		</ul>
     </div>
 	<div class="btn">
+	<?php Auth::user()?$UserEmail=(Auth::user()->email):$UserEmail=NULL?>
+	<?php if($UserEmail){ ?>
 	<a href="/goods/ProjectWrite/{{$product->id}}" class="skinbtn gv-qnawrite"><em>상품후기 글쓰기</em></a>
+	<?php } ?>
 	</div>
 	<tbody>
 	<!-- 상품후기 리스트 -->
@@ -281,11 +284,11 @@ td .qna .answer {
 				{{ $review->body}}
 				</div>
 			<div class="comment-wrap" style="padding-bottom:20px;clear:both;">
-				<div class="head">
+				<!-- <div class="head">
 					<div class="comment-count">
 						<p><strong>0</strong> 개의 댓글이 있습니다</p>
 					</div>
-				</div>
+				</div> -->
 				<ul>
 				@foreach($review->replies as $comment)
 					<li>
@@ -294,6 +297,7 @@ td .qna .answer {
 					</li>
 				@endforeach
 				</ul>
+        		<?php if($UserEmail){ ?>
 				<form method="post" action="{{ route('reply.add') }}">
 						{{ csrf_field() }}
 					<div class="comment-write js-form-write">
@@ -306,6 +310,7 @@ td .qna .answer {
 						<!-- <div class="clear-both"></div> -->
 					</div>
 				</form>
+				<?php } ?>
 			</div>
 		</div>
 	</td>

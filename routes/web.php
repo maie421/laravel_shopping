@@ -57,22 +57,14 @@ Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 Route::get('/goods/ProjectWrite/{id}','CommentController@index')->name('index.add');
 
 //결제
-// Route::get('/goods/checkout', function(){
-//     return view('/goods/checkout');
-// });
 Route::get('/goods/checkout', 'checkController@index')->name('checkout.index');
-// Route::post('/goods/payment', 'checkController@payment');
-
-//paypal 결제
-// // route for processing payment
-// Route::post('paypal', 'PayPalController@payWithpaypal');
-// // route for check status of the payment
-// Route::get('status', 'PayPalController@getPaymentStatus');
-
+//PayPal
 Route::get('payment', 'PayPalController@payment')->name('payment');
 Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'PayPalController@success')->name('payment.success');
-
+//주문
+Route::post('/goods/order','OrderController@order');
+Route::get('/order/orderConfirm','OrderController@index');//주문 페이지
 //게시판
 Route::get('/notices',function(){
     return view('/notices/index');

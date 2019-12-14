@@ -21,7 +21,7 @@
 	float:right;
 }
 #red_color1 {
-	color:#D34E3B;
+	color:#004f9a;
 }
 table,th,td{
 	border-collapse: collapse;
@@ -185,13 +185,14 @@ td a:hover{
     @foreach(session('cart') as $id => $details)
     <?php $total = 0 ?>
     <tr>
-        <td class="notice_title" ><a href="#"><img src="{{ $details['path'] }} " id="basket_img"></a>
+        <td class="notice_title" ><img src="{{ $details['path'] }} " id="basket_img">
         <div id="basket_img_name">{{ $details['name'] }}</div></td>
         <?php $total += $details['price'] * $details['quantity'] ?>
         <td class="notice">{{ $details['quantity'] }}</td>
         <td class="notice">{{ $details['price'] }}</td>
         <td class="notice">{{$total}}</td>
-        <td class="notice">배송일정</td>
+        <?php $timestamp = strtotime("+3 days"); ?>
+        <td class="notice">{{date("Y-m-d", $timestamp)}}</td>
     </tr>
 	@endforeach
 	@endif
@@ -206,6 +207,8 @@ td a:hover{
             <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
         @endif
     </div>
+        <form action="/goods/order" method="post">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
@@ -236,59 +239,40 @@ td a:hover{
         <label for="name_on_card">Name on Card</label>
         <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
     </div>
-            <!-- 카드 입력창 -->
-            <!-- <form role="form" action="#" method="post" class="require-validation"
-                                                     data-cc-on-file="false"
-                                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
-                                                    id="payment-form"> -->
-                        @csrf
-  
-                        <div class='form-row row'>
+        @csrf
+        <div class='form-row row'>
+            <label class='control-label'>Card Number</label> 
+            <input autocomplete='off' class='form-control card-number' size='20'type='text'>
+        </div>
+        <div class='form-row row'>
+            <div class='col-xs-12 col-md-4 form-group cvc required'>
+                <label class='control-label'>CVC</label> 
+                <input autocomplete='off'class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+            </div>
+            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                <label class='control-label'>Expiration Month</label> 
+                <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
+            </div>
+            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                <label class='control-label'>Expiration Year</label>
+                <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
+            </div>
+        </div>
 
-                                <label class='control-label'>Card Number</label> <input
-                                    autocomplete='off' class='form-control card-number' size='20'
-                                    type='text'>
+        <!-- <div class='form-row row'>
+            <div class='col-md-12 error form-group hide'>
+                <div class='alert-danger alert'>Please correct the errors and try
+                    again.</div>
+            </div>
+        </div> -->
+        <input type="submit" class="btn btn-success" value="확인">
+        </form>
+        <form action="/goods/payment" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <!-- <input type='hidden' name="Authorization" value="KakaoAK sk_test_7qrss0xiTynn9s9Q9kbZqVit00GKIUHEN9"> -->
 
-                        </div>
-  
-                        <div class='form-row row'>
-                            <div class='col-xs-12 col-md-4 form-group cvc required'>
-                                <label class='control-label'>CVC</label> <input autocomplete='off'
-                                    class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                    type='text'>
-                            </div>
-                            <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                <label class='control-label'>Expiration Month</label> <input
-                                    class='form-control card-expiry-month' placeholder='MM' size='2'
-                                    type='text'>
-                            </div>
-                            <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                <label class='control-label'>Expiration Year</label> <input
-                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                    type='text'>
-                            </div>
-                        </div>
-
-                        <!-- <div class='form-row row'>
-                            <div class='col-md-12 error form-group hide'>
-                                <div class='alert-danger alert'>Please correct the errors and try
-                                    again.</div>
-                            </div>
-                        </div> -->
-                        <form action="/goods/payment" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <!-- <input type='hidden' name="Authorization" value="KakaoAK sk_test_7qrss0xiTynn9s9Q9kbZqVit00GKIUHEN9"> -->
-                        <input type="submit" value="확인">
-
-                        <a href="{{ route('payment') }}" class="btn btn-success">Pay $100 from Paypal</a>
-                        </form>
-                        <!-- <div class="row">
-                            <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
-                            </div>
-                        </div> -->
-                          
-                    </form>
+        <!-- <a href="{{ route('payment') }}" class="btn btn-success">Pay $100 from Paypal</a> -->
+        </form>
         <div id="card-element">
             <!-- a Stripe Element will be inserted here. -->
         </div>
@@ -300,7 +284,7 @@ td a:hover{
 </div>
 </div>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-  
+
 <script type="text/javascript">
 $(function() {
     var $form         = $(".require-validation");

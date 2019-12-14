@@ -32,7 +32,9 @@ class goodsController extends Controller
     public function sore(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|image|max:2048'
+            'image' => 'required|image|max:2048',
+            'content' => 'required',
+            'price'=>'int'
         ]);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
@@ -55,7 +57,7 @@ class goodsController extends Controller
 
         // return view('/goods/meat');
         error_log($request);
-        return back();
+        return redirect('/goods/meat');
     }
     public function destroy($image)
     {
@@ -121,6 +123,7 @@ class goodsController extends Controller
         return redirect('/goods/cart');
     }
     public function updatecart($id,Request $request){
+
         $cart=session()->get('cart');
 
         if(isset($cart[$id])){
