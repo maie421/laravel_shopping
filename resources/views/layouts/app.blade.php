@@ -164,50 +164,48 @@ ul {
   <!-- navigation bar -->
     <!--공통 부분-->
     <div id="login_menu">
-            <div id="login_menu_1">
+        <div id="login_menu_1">
+            <ul>
+            @guest
+                <li><a href="/auth/login">로그인</a></li>
+                <li>|</li>
+                <li><a href="/auth/register">회원가입</a></li>
+                <li>|</li>
+                <li><a href="/notices/index">고객센터</a></li>
+            @else
+                <li><a href="/mypage/order">{{ Auth::user()->name }}님</a></li>
+                <li><a href="/notices/index">고객센터</a></li>
+                <li><a 
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    로그아웃
+                </a></li>
+                <form id="logout-form" action="/authLogout" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endguest
+                <li><a href="/goods/cart">장바구니</a></li>
+            </ul>
+        </div>
+        <div id="top_logo_back">
+            <a href="/"><img
+                    src="http://cafefiles.naver.net/data38/2009/6/19/229/%BA%CE%BB%EA%B4%D9%C0%CC%B3%AA%B9%CD_copy_rekios1209.png"
+                    id="top_logo_img"></a>
+        </div>
+        <div id="center_menu">
+            <div id="center_menu_1">
                 <ul>
-                @guest
-                    <li><a href="/auth/login">로그인</a></li>
+                    <li><a href="/goods/meat">고기</a></li>
                     <li>|</li>
-                    <li><a href="/auth/register">회원가입</a></li>
+                    <li><a href="/goods/meat">고기</a></li>
                     <li>|</li>
-                    <li><a href="/notices/index">고객센터</a></li>
-                @else
-                    <li><a href="/mypage/order">{{ Auth::user()->name }}님</a></li>
-                    <li><a href="/notices/index">고객센터</a></li>
-                    <li><a 
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        로그아웃
-                    </a></li>
-                    <form id="logout-form" action="/authLogout" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                @endguest
-                    <li><a href="/goods/cart">장바구니</a></li>
+                    <li><a href="/goods/meat">고기</a></li>
+                    <li>|</li>
+                    <li><a href="/goods/meat">고기</a></li>
                 </ul>
             </div>
-            <div id="top_logo_back">
-                <a href="/"><img
-                        src="http://cafefiles.naver.net/data38/2009/6/19/229/%BA%CE%BB%EA%B4%D9%C0%CC%B3%AA%B9%CD_copy_rekios1209.png"
-                        id="top_logo_img"></a>
-            </div>
-            <div id="center_menu">
-                <div id="center_menu_1">
-                    <ul>
-                        <li><a href="/goods/meat">고기</a></li>
-                        <li>|</li>
-                        <li><a href="#">????</a></li>
-                        <li>|</li>
-                        <li><a href="#">????</a></li>
-                        <li>|</li>
-                        <li><a href="#">????</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
-
-        
+    </div>
     </header>
   </div>
   <!-- navigation bar ends here -->

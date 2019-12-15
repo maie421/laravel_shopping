@@ -66,7 +66,7 @@ Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 //주문
 Route::post('/goods/order','OrderController@order');
-Route::get('/order/orderConfirm','OrderController@index');//주문 페이지
+Route::get('/order/orderConfirm/{day}','OrderController@index');//주문 페이지
 Route::get('/mypage/order','OrderController@MypageOrder');
 
 //게시판

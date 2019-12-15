@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->text('goods_name');
             $table->text('num');
             $table->text('money');
+            $table->text('group');
             $table->timestamps();
         });
     }

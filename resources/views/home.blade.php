@@ -206,27 +206,15 @@ del{
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
                 <div class="carousel-item active"
-                    style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="display-4">Second Slide</h3>
-                        <p class="lead">This is a description for the second slide.</p>
-                    </div>
+                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/16b48ee5a816e8eb05ea677d2de84450_77389.jpg')">
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
                 <div class="carousel-item"
-                    style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="display-4">Second Slide</h3>
-                        <p class="lead">This is a description for the second slide.</p>
-                    </div>
+                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/eb4c9d469cf4da590a895ed7a93f1c23_93818.jpg')">
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
                 <div class="carousel-item"
-                    style="background-image: url('https://source.unsplash.com/O7fzqFEfLlo/1920x1080')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="display-4">Third Slide</h3>
-                        <p class="lead">This is a description for the third slide.</p>
-                    </div>
+                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/16b48ee5a816e8eb05ea677d2de84450_95832.jpg')">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -250,8 +238,28 @@ del{
         <div id="color">
         5000원
         </div>
-				</div>
-			</div><!--bxslider-->
+		</div>
+        <div id="box_sale_1"><!--페이지 이동-->
+        <img src="http://study421.dothome.co.kr/html/management/1000000906_detail_047.jpg" id="box_sale_img">
+        <div id="box_sale_name">
+        [eat cook] 냉장 스테이크 +</br>
+        </div>
+        <br>
+        <div id="color">
+        13900원
+        </div>
+        </div><!--box_sale-->
+        <div id=box_sale>
+        <img src="http://study421.dothome.co.kr/html/management/1000000776_detail_073.jpg" id="box_sale_img">
+        <div id="box_sale_name"><!--홀수 짝수 박스 크기 다름-->
+        대패삼겹살 500g x 4팩</br>
+        </div>
+        <del>24400원</del></br>
+        <div id="color">
+        21960원
+        </div>
+		</div>
+    </div>
     <div id="main_main_gray">
       <div id="main_main">
         <img src="http://study421.dothome.co.kr/img/main/main_title_105.jpg" id="main_title_105">
@@ -266,28 +274,49 @@ del{
         5000원
         </div>
         </div><!--box_sale-->
+        <div id="box_sale_1">
+        <img src="http://study421.dothome.co.kr/html/management/1000001212_detail_045.jpg" id="box_sale_img">
+        <div id="box_sale_name"><!--홀수 짝수 박스 크기 다름-->
+        듀록 삼겹살 500g<br>
+        </div>
+        <del>6500원</del><br>
+        <div id="color">
+        5900원
+        </div>
+        </div>
+        <div id="box_sale"><!--페이지 이동-->
+        <img src="http://study421.dothome.co.kr/html/management/1000001308_detail_0100.jpg" id="box_sale_img">
+        <div id="box_sale_name">
+        소고기 장조림용 300g</br>
+        </div>
+        <br>
+        <div id="color">
+        5890원
+        </div>
+        </div><!--box_sale-->
+	</div>
      </div><!--main_main-->
     </div><!--main_main_gray-->
     <div id="event_full">
       <div id="event">
           <div id="event_title">이벤트 전시관</div>
           <a href="#"><span id="event_title_more">전체보기></span></a>
-          <img src="/img/main/event02.jpg" id="event_img">
+          <img src="https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_1270106821/72ba537fea64fbab95b2ae67b65a354d_50487.png" id="event_img">
           <!-- 자바-->
-          <img src="/img/main/event01.jpg" id="event_img">
+          <img src="http://study421.dothome.co.kr/img/main/event01.jpg" id="event_img">
       </div>
       <div id="event_1">
           <!-- 자바-->
           <div id="event_title_1">스테이크 전시관</div>
           <a href="#"><span id="event_title_more">전체보기></span></a>
-          <img src="/img/main/event11.jpg" id="event_img_1">
+          <img src="https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_587930787/f3ccdd27d2000e3f9255a7e3e2c48800_15889.jpg" id="event_img_1">
       </div>
     </div>
     <div id="main_main_gray_img">
       <div id="main_main">
-        <a href="#"><img src="/img/main/sale.jpg" id="sale_img"></a>
-        <a href="#"><img src="/img/main/right_banner01.jpg" id="right_banner"></a>
-        <a href="#"><img src="/img/main/right_banner02.jpg" id="right_banner"></a>
+        <img src="http://study421.dothome.co.kr/img/main/sale.jpg" id="sale_img">
+        <img src="http://study421.dothome.co.kr/img/main/right_banner01.jpg">
+        <img src="http://study421.dothome.co.kr/img/main/right_banner02.jpg" id="right_banner">
       </div>
     </div>
     </section>

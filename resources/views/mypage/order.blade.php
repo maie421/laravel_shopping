@@ -41,7 +41,7 @@
           </div>
           <!-- 사이드바 메뉴목록1 -->
           <ul class="list-group">
-              <li class="list-group-item">주문사항</li>
+          <li class="list-group-item"><a href="/mypage/order">주문사항</a></li>
           </ul>
         </div>
     </div>
@@ -57,8 +57,7 @@
             <tbody>
             @foreach ($order as $orders)
                 <tr>
-                {{$orders->id}}
-                    <td><a href="#">{{$orders->goods_name}}</a></td>
+                    <td><a href="/order/orderConfirm/{{$orders->group}}">{{$orders->goods_name}}</a></td>
                     <td>{{$orders->created_at}}</td>
                 </tr>
             @endforeach
