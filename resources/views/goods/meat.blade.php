@@ -4,6 +4,15 @@
 
 @section('content')
 <style>
+    .carousel-item {
+        height: 50vh;
+        min-height: 350px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     #select{
 	width:1100px;
 	font-size:13px;
@@ -137,7 +146,8 @@
     <option>음식장보기</option>
   </select>
 </div>
-  <div class="menu_banner"><img src="#" id="menu_banner"></div>
+ </div>
+  <div class="menu_banner"><img src="http://study421.dothome.co.kr/img/menu/banner4.JPG" id="menu_banner"></div>
 <div id="main_main">
 <span id="full">상품  {{$goods->total()}}개</span>
 <div id="line">

@@ -11,15 +11,6 @@ class goodsController extends Controller
 {
     public function index()
     {
-        // $url = 'https://s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/' . env('AWS_BUCKET') . '/';
-        // $images = [];
-        // $files = Storage::disk('s3')->files('images','public');
-        //     foreach ($files as $file) {
-        //         $images[] = [
-        //             'name' => str_replace('images/', '', $file),
-        //             'src' => $url . $file
-        //         ];
-        //     }
     if (request()->sort == 'low_high') {
         $goods=DB::table('goods')->orderBy('price')->paginate(9);
     }else if(request()->sort == 'high_low'){
@@ -48,15 +39,6 @@ class goodsController extends Controller
             'price'=>$request['price'],
             'path'=>'https://shoppi.s3' . env('AWS_DEFAULT_REGION') . '.amazonaws.com' . env('AWS_BUCKET') . '/'.$filePath
         ]);
-        // $imges->name=$request['name'];
-        // $imges->content=$request['content'];
-        // $imges->price=$request['price'];
-        // $imges->path='https://s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/' . env('AWS_BUCKET') . '/'.$filePath;
-        // // $imges->path="asdf";
-        // $imges->save();
-
-        // return view('/goods/meat');
-        error_log($request);
         return redirect('/goods/meat');
     }
     public function destroy($image)
@@ -66,7 +48,6 @@ class goodsController extends Controller
     }
     public function product($id){
         $product=goods::find($id);
-        // $product=DB::table('goods')->where('id',$id);
         return view('/goods/product',['product'=>$product]);
     }
     public function addToCart($id)
@@ -88,10 +69,9 @@ class goodsController extends Controller
             ];
  
             session()->put('cart', $cart);
-            // return redirect()->back();
+            
             return redirect('/goods/cart');
         }
-        // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
  
             $cart[$id]['quantity']++;
@@ -119,7 +99,6 @@ class goodsController extends Controller
             unset($cart[$id]);
             session()->put('cart', $cart);
         }
-        // session()->flash('success', 'Product removed successfully');
         return redirect('/goods/cart');
     }
     public function updatecart($id,Request $request){

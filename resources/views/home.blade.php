@@ -198,34 +198,34 @@ del{
 
 </style>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: -15px;">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active"
-                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/16b48ee5a816e8eb05ea677d2de84450_77389.jpg')">
-                </div>
-                <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item"
-                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/eb4c9d469cf4da590a895ed7a93f1c23_93818.jpg')">
-                </div>
-                <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item"
-                    style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/16b48ee5a816e8eb05ea677d2de84450_95832.jpg')">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active"
+            style="background-image: url('https://shoppi.s3.ap-northeast-2.amazonaws.com/linkedin_banner_image_2.png')">
         </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item"
+            style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/eb4c9d469cf4da590a895ed7a93f1c23_93818.jpg')">
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item"
+            style="background-image: url('https://www.foodjang.com/data/skin/front/0685everest/img/banner/slider_2258553093/16b48ee5a816e8eb05ea677d2de84450_95832.jpg')">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
         <div id="main_main">
         <img src="http://study421.dothome.co.kr/img/main/main_title_04.jpg" id="main_title_04">
 

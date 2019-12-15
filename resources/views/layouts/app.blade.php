@@ -68,13 +68,12 @@ ul {
 }
 
 #top_logo_back {
-    width: 1058px;
+    width: 1200px;
     text-align:center;
-    margin: 20px auto;
 }
 
 #top_logo_img {
-    width: 100px;
+    width: 150px;
 }
 
 #center_menu {
@@ -130,7 +129,7 @@ ul {
     width: 270px;
     float: left;
     border-right: 1px solid #dedede;
-    margin: 45px 30px 0px 0px;
+    margin: 0 30px 0px 0px;
 }
 .copy_left_info{
 	margin-top:10px;
@@ -147,7 +146,7 @@ ul {
     margin-top: 10px;
 }
 #copy_right {
-    padding-top: 20px;
+    margin-top: -10px;
     width: 700px;
     float: left;
 }
@@ -189,7 +188,7 @@ ul {
         </div>
         <div id="top_logo_back">
             <a href="/"><img
-                    src="http://cafefiles.naver.net/data38/2009/6/19/229/%BA%CE%BB%EA%B4%D9%C0%CC%B3%AA%B9%CD_copy_rekios1209.png"
+                    src="https://shoppi.s3.ap-northeast-2.amazonaws.com/logo_transparent.png"
                     id="top_logo_img"></a>
         </div>
         <div id="center_menu">
@@ -245,7 +244,7 @@ ul {
 			  </div>
       </div>
       <div id="copy_right">
-				<img src="/img/main/top_logo.png" width="90px">
+				<img src="https://shoppi.s3.ap-northeast-2.amazonaws.com/logo_transparent.png" width="90px">
           <div class="copy_right_info">
           COMPANY : (주)푸드장  /  OWNER : 윤영미  /  CALL CENTER : 1111-1111  /  FAX : 111-111-1111<br>
           ADDRESS : 부산광역시 부산진구 엄광로 176 동의대<br>

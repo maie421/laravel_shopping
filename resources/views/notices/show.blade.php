@@ -56,8 +56,7 @@
           </div>
           <!-- 사이드바 메뉴목록1 -->
           <ul class="list-group">
-              <li class="list-group-item"><a href="#">공지사항</a></li>
-            <li class="list-group-item"><a href="#">질문게시판</a></li>
+              <li class="list-group-item">공지사항</li>
           </ul>
         </div>
     </div>

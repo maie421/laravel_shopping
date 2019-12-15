@@ -265,20 +265,16 @@ td a:hover{
                     again.</div>
             </div>
         </div> -->
-        <input type="submit" class="btn btn-success" value="확인">
-        </form>
-        <form action="/goods/payment" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <!-- <input type='hidden' name="Authorization" value="KakaoAK sk_test_7qrss0xiTynn9s9Q9kbZqVit00GKIUHEN9"> -->
-
-        <!-- <a href="{{ route('payment') }}" class="btn btn-success">Pay $100 from Paypal</a> -->
-        </form>
         <div id="card-element">
             <!-- a Stripe Element will be inserted here. -->
         </div>
         <!-- Used to display form errors -->
         <div id="card-errors" role="alert"></div>
     </div>
+    <div id="basket_buy" style="margin-top:100px;">
+        <input type="submit" id="basket_full_buy" style="width:200px; margin-right:30px;" value="상품 주문">
+    </div>
+    </form>
     <div class="spacer"></div>
     </div>
 </div>

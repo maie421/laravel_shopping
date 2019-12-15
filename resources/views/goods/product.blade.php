@@ -318,57 +318,7 @@ td .qna .answer {
 </table>
 @endforeach
 <!-- 끝 상품후기 리스트 -->
-<!-- 시작 상품문의 리스트 -->
-<div class="title_detail">
-	<ul>
-	<li><a href="#none" onclick="movesub('page01')">상품상세정보</a></li>
-	<li class="#none"><a href="#none" onclick="movesub('page02')">상품사용후기</a></li>
-	<li class="on"><a href="#" onclick="movesub('page03')">상품 Q&amp;A</a></li>
-	<li class=""><a href="#none" onclick="movesub('page04')">배송교환관련</a></li>
-	</ul>
-</div>
-<div class="btn">
-	<a href="/goods/ProjectWrite/{{$product->id}}" class="skinbtn gv-qnawrite"><em>상품문의 글쓰기</em></a>
-</div>
-<table class="table" style="margin-top:-40px;">
-	<tr>
-		<td>1</td>
-		<td style="width:470px" ><a href="javascript:doDisplay(3);">배송상태 좋아요</a></td>
-		<td>홍길*</td>
-		<td>2019.10.07</td>
-		<td>답변미완료</td>
-		<td>답변하기</td>
-	</tr>
-	<td colspan="5" style="display: table-cell; border-top:none;">
-	
-	<div class="qna" id="3" style="	display:none;">
-		<div class="question">
-			<div class="msg">
-				<strong>유통기한</strong>
-				<p>대략 유통기한이 어느정도 되나요?&nbsp;</p>
-			</div>
-			<div class="btn">
-			</div>
-		</div>
-		<div class="answer">
-			<div class="msg">
-				<strong>안녕하세요 푸드장입니다.</strong>
-				<p style="">저희 푸드장을 이용해주셔서 감사합니다.♥</p>
-			</div>
-			<div class="btn">
-			</div>
-		</div>
-		<div class="comment-write js-form-write" style="padding-top:-30px;">
-			<div class="ctt">
-			<textarea class="form-control" rows="5" name="content" id="content" placeholder="댓글내용을 입력해주세요" ></textarea>
-			</div>
-			<div style="text-align:right"><a href="#"><em>확인</em></a></div>
-			<div class="clear-both"></div>
-		</div>
-	</div>
-	</td>
-</table>
-<!-- 상품문의 리스트 -->
+
 
 </div>
 
