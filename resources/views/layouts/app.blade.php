@@ -70,6 +70,7 @@ ul {
 #top_logo_back {
     width: 1200px;
     text-align:center;
+    margin:15px 0;
 }
 
 #top_logo_img {
