@@ -37,7 +37,7 @@ class goodsController extends Controller
             'name' =>$request['name'],
             'content' => $request['content'],
             'price'=>$request['price'],
-            'path'=>'https://shoppi.s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com' . env('AWS_BUCKET') . '/'.$filePath
+            'path'=>'https://'. env('AWS_BUCKET') .'.s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/'.$filePath
         ]);
         return redirect('/goods/meat');
     }
