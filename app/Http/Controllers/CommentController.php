@@ -22,7 +22,7 @@ class CommentController extends Controller
             $name = time() . $file->getClientOriginalName();
             $filePath = 'images/' . $name;
             Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
-            $comment->img='https://shoppi.s3' . env('AWS_DEFAULT_REGION') . '.amazonaws.com' . env('AWS_BUCKET') . '/'.$filePath;
+            $comment->img='https://'. env('AWS_BUCKET') .'.s3.' . env('AWS_DEFAULT_REGION') . '.amazonaws.com/'.$filePath;
         }
         $comment->user()->associate($request->user());
         $post = goods::find($request->get('post_id'));
