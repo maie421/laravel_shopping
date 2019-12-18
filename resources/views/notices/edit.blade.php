@@ -24,8 +24,8 @@
     </div>
     <div class="content_main">
     <form method="post" action="/update/{{$notices->id}}">
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
+        @csrf
+        @method('PUT')
         <div class="mb-3">
 
             <label for="title">제목</label>
@@ -54,8 +54,8 @@
         <button type="submit" class="btn btn-sm btn-primary" style="float:left;"id="btnList">수정</button>
     </form>
     <form action="/delete/{{$notices->id}}" method="POST">
-        {{ csrf_field() }}
-        {{ method_field('delete') }}
+        @csrf
+        @method('delete')
         <button type="submit" class="btn btn-sm btn-primary"style="float:left; margin:0 5px;" id="btnList">삭제</button>
         <a href="/notices/index"><button type="button"style="float:left;" class="btn btn-sm btn-primary" id="btnList">목록</button></a>     
     </div>
