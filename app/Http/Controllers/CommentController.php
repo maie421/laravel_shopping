@@ -26,8 +26,8 @@ class CommentController extends Controller
         }
         $comment->user()->associate($request->user());
         $post = goods::find($request->get('post_id'));
-        $id=$request->get('post_id');
         $post->comments()->save($comment);
+        $id=$request->get('post_id');
         return redirect('/goods/product/'.$id);
     }
     public function replyStore(Request $request)
