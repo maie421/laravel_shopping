@@ -7,12 +7,13 @@
   <li>검색 결과 데이터 요청 및 출력:</li>
   <li>언어: HTML, CSS ,javascript,Laravel</li>
 </ul>
-<h3>기능</h3>
 <br>
 파일업로드 :s3 사용<br>
 Heroku를 이용한 배포
 <br>
-1.로그인,회원가입<br>
+<h3>기능</h3>
+
+1. 로그인,회원가입<br>
   1-1) Auth 사용<br>
   
 2. 회원 마이 페이지<br>
