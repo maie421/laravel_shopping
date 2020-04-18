@@ -11,6 +11,15 @@
 파일업로드 :s3 사용<br>
 Heroku를 이용한 배포
 <br>
+<h3>API</h3>
+<h4>메인 상품들</h4>
+get /goods/meat<br>
+<h4>상품</h4>
+get /goods/product/{id}<br>
+
+<h4>댓글</h4>
+post /comment<br>
+
 <h3>기능</h3>
 
 1. 로그인,회원가입<br>
