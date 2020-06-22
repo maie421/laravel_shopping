@@ -13,12 +13,12 @@ Heroku를 이용한 배포
 <br>
 <h3>API</h3>
 <h4>메인 상품들</h4>
-GET /goods/meat<br>
+GET api/goods/meat<br>
 <h4>상품</h4>
-GET /goods/product/{id}<br>
+GET api/goods/product/{id}<br>
 
 <h4>댓글</h4>
-POST /comment<br>
+POST api/comment<br>
 
 <h3>기능</h3>
 
